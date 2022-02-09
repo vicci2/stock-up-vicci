@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/static/stock css/viccistockhome.css">
+         <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+         <!-- Bootstrap CSS -->
+         <link rel="icon" type="image/x-icon" href="./images/robert-katzki-jbtfM0XBeRc-unsplash.jpg">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <title>Home</title>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg navbar-primary  bg-dark " >
+    <ul class="nav nav-tabs">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Communication</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">About Us</a></li>
+          <li><a class="dropdown-item" href="#">Hotline</a></li>
+          <li><a class="dropdown-item" href="">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Social Media Platforms</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link  active " aria-current="page" href="./home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="./dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="./inventory">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./sales">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./stock">Stock</a>
+      </li>
+
+    </ul>
+  </nav>
+ <div class="container mt-5">
+    <div class="row">
+      <div class="col-3">
+        <!-- Sidebar -->
+       
+        
+
+
+<!-- Sidebar -->
+<ul class="list-group" >
+  <li class="list-group-item" style="background-color: rgb(0, 0, 0);" >
+    <!-- avatar -->
+  <!-- <img src="/static/images/stock.jpg" class="rounded float-left mr-3" alt="Dashboard Avatar" width="50px" height="30px"> -->
+  <!-- heading -->
+  <h3><i class="fa fa-bars" aria-hidden="true"></i> Nav Menu</h3></li>
+
+  <li class="list-group-item"style="background-color: rgb(0, 0, 0);"> 
+    <a href="./dashboard"> <button class="navbtn">Dashboard</button></a>
+  </li>
+ 
+  <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./inventory"><button class="navbtn">Inventory</button></a>
+  </li>
+  <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./sales"><button class="navbtn">Sales</button></a></li>
+  <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./stock"> <button class="navbtn">Stock</button></a></li>
+  
+</ul>
+</div>
+
+      <div class="col-md-9 col-sm-6 p-4 mt-5"> 
+        <!-- Analytics -->
+        <!-- Cards -->
+        <div class="row">
+          <!-- use text-light and bg-success classes on the cards -->
+          <div class="col col-lg-4 col-md-4 col-sm-12">
+            <div class="card bg-success text-light" style="width: 16rem;">
+            <div class="card-body">
+              <h5 class="card-title">Current Inventory</h5>
+              <p class="card-text"> 11 </p>
+            </div>
+          </div>
+        </div>
+
+          <div class="col col-lg-4 col-md-4 col-sm-12">
+            <div class="card bg-success text-light" style="width: 16rem;">               
+              <div class="card-body">
+                <h5 class="card-title">Today's Sales</h5>
+                <p class="card-text"> 128 </p>                 
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-4 col-md-4 col-sm-12">
+            <div class="card bg-success text-light" style="width: 16rem;">               
+              <div class="card-body">
+                <h5 class="card-title">Total Stock</h5>
+                <p class="card-text"> 28 </p>                 
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          
+          <div class="col mt-4">
+            <canvas id="myChart" width="879" height="878" style="display: block; box-sizing: border-box; height: 439px; width: 439.5px;"></canvas>
+          </div>
+          <div class="col mt-4">
+            <canvas id="pie-chart" width="879" height="878" style="display: block; box-sizing: border-box; height: 439px; width: 439.5px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+  </html>
+  

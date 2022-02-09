@@ -1,0 +1,14 @@
+body{background-color: darkcyan;background-image: url(/images/abstract_triangle_space_background.jpeg);}
+form{width: 100%;border-top-left-radius: 10%; background-color: darkcyan;padding-bottom: 10pt;background-image: url(./abstract_triangle_space_background.jpeg);background-blend-mode: overlay;}
+#span2{color: darkgoldenrod;}
+h2{margin-left: 10pt;}
+#span3{color: rgb(228, 151, 9);}
+#span1{color: rgb(9, 13, 228);}
+#span4{color: darkorange;}
+#tbl1,tr,td{border-width: 1pt;}
+#table1,tr,td{border-width: 1pt; width: 32pt; height: 10pt;}
+tr:hover{background-color: lightslategray;}
+#tbl1{margin-bottom: 10pt;}
+#table1{margin-bottom: 10pt;}
+#tblede2{margin-bottom: 10pt;}
+

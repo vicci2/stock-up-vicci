@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.11.3/af-2.3.7/b-2.2.1/b-colvis-2.2.1/b-html5-2.2.1/b-print-2.2.1/cr-1.5.5/date-1.1.1/fc-4.0.1/fh-3.2.1/kt-2.6.4/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.0/sp-1.4.0/sl-1.3.4/sr-1.1.0/datatables.min.css"/>
+  <link rel="stylesheet" href="/static/stock css/viccistockstock.css">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="icon" type="image/x-icon" href="./images/robert-katzki-jbtfM0XBeRc-unsplash.jpg">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Stock</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-primary  bg-dark">
+    <ul class="nav nav-tabs">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Communication</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">About Us</a></li>
+          <li><a class="dropdown-item" href="#">Hotline</a></li>
+          <li><a class="dropdown-item" href="">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Social Media Platforms</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link  " aria-current="page" href="./home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="./dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="./inventory">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./sales">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="./stock">Stock</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="container ">
+  <div class="row">
+    <div class="col-3" style=" transform: translateY(80px);">
+      <div class="col-12">  
+        <nav style=" border-radius: 10px;margin-right: 5%; background-color: rgb(33, 77, 77);" >
+
+
+          <button type="button" class="btn mt-2 mb-1 5 btn-outline-warning">Nav Drop Down Menu</button>
+          <div class="input-group mb-3">
+            
+            <button type="button" style="margin-left: 60px;" class="btn btn-outline-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+             </button>
+            <ul class="dropdown-menu ">
+              <li class="list-group-item" style="background-color: rgb(0, 0, 0);" >
+
+              <h3><i class="fa fa-bars" aria-hidden="true"></i> Nav Menu</h3></li>
+            
+              <li class="list-group-item"style="background-color: rgb(0, 0, 0);"> 
+                <a href="./dashboard"> <button class="navbtn">Dashboard</button></a>
+              </li>
+             
+              <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./inventory"><button class="navbtn">Inventory</button></a>
+              </li>
+              <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./sales"><button class="navbtn">Sales</button></a></li>
+              <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./stock"> <button class="navbtn">Stock</button></a></li>
+              
+            </ul>
+          </div>
+        </a>                    
+        </nav>
+        </div>
+    </div>
+
+    <div class="col-9 mt-5">
+      <div class="row">
+        
+        <div class="col-3 "> 
+        
+          <a  style="color: darkcyan; transform: translateY(-25px);position: relative;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/static/adder2.png" alt="Add stock">Stock</a> 
+        
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><img src="/static/adder.png" alt=""> Stock</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>                                 
+                        <form action="add_stock" style="text-align: center;" method="post" class="pop">
+                          <!-- <div class="mb-3">
+                              <label for="name" class="form-label">Enter your Name</label>
+                              <input type="text" name="name" class="form-control" id="name">
+                              <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->                                   
+                            <div class="mb-3">
+                              <label for="Item" class="form-label">Product Name</label>
+                              <input type="text" name="product_name" class="form-control" id="Item">
+                            </div>
+                            <div class="mb-3">
+                              <label for="Item" class="form-label">Quantity</label>
+                              <input type="text" name="quantity" class="form-control" id="Item">
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="Item" class="form-label">Buying Price</label>
+                              <input type="text" name="bp" class="form-control" id="Item">
+                            </div>
+                          <button type="submit" style="width: 300px;" class="btn btn-primary" data-bs-target="tbl1">Stock Up</button>
+                      </form> 
+                    <div class="mb-3">                                          
+                    </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-3">  </div>
+
+        <div class="col-3">
+          
+          
+          
+        </div>
+      </div>       
+      <table class="table  " id="tbl1" align='center' width="90%">
+        <thead >
+          <tr class="tbltr text-warning" >
+            <th scope="col">ID</th>
+            <th scope="col">PRODUCT NAME</th>
+            <th scope="col">TOTAL QUANTITY</th>
+            <th scope="col">TOTAL COST</th>
+            <th scope="col">DATE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in stock %}
+          <tr>  
+            <!-- {{i}} -->
+            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[0]}}</td>
+            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[1]}}</td>
+            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[2]}}</td>
+            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[3]}}</td>
+            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[4]}}</td>
+          </tr> 
+            {% endfor %}       
+        </tbody>
+      </table>
+    </div> 
+  
+    
+    <!-- <div class="col-md-9 col-sm-6 p-4 mt-5"> 
+      Analytics
+       Cards 
+      <div class="row">
+        <use text-light and bg-success classes on the cards> 
+        <div class="col col-lg-4 col-md-4 col-sm-12">
+          <div class="card" style="width: 16rem;">
+          <div class="card-body">
+            <h5 class="card-title">Inventories</h5>
+            <p class="card-text"> 11 </p>
+          </div>
+        </div>
+      </div>
+
+        <div class="col col-lg-4 col-md-4 col-sm-12">
+          <div class="card" style="width: 16rem;">               
+            <div class="card-body">
+              <h5 class="card-title">Sales</h5>
+              <p class="card-text"> 28 </p>                 
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-lg-4 col-md-4 col-sm-12">
+          <div class="card" style="width: 16rem;">                
+            <div class="card-body">
+              <h5 class="card-title">Users</h5>
+              <p class="card-text">1</p>                  
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        
+        <div class="col mt-4">
+          <canvas id="myChart" width="879" height="878" style="display: block; box-sizing: border-box; height: 439px; width: 439.5px;"></canvas>
+        </div>
+        <div class="col mt-4">
+          <canvas id="pie-chart" width="879" height="878" style="display: block; box-sizing: border-box; height: 439px; width: 439.5px;"></canvas>
+        </div>
+      </div>
+    </div> -->
+
+  
+  </div>
+</div>
+ <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.11.3/af-2.3.7/b-2.2.1/b-colvis-2.2.1/b-html5-2.2.1/b-print-2.2.1/cr-1.5.5/date-1.1.1/fc-4.0.1/fh-3.2.1/kt-2.6.4/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.0/sp-1.4.0/sl-1.3.4/sr-1.1.0/datatables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+       $('#tbl1').DataTable();
+    } );
+    </script>
+</body>
+</html>

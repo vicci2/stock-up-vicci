@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.11.3/af-2.3.7/b-2.2.1/b-colvis-2.2.1/b-html5-2.2.1/b-print-2.2.1/cr-1.5.5/date-1.1.1/fc-4.0.1/fh-3.2.1/kt-2.6.4/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.0/sp-1.4.0/sl-1.3.4/sr-1.1.0/datatables.min.css"/>
+         <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+         <!-- Bootstrap CSS -->
+         <link rel="icon" type="image/x-icon" href="./images/robert-katzki-jbtfM0XBeRc-unsplash.jpg">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <link rel="stylesheet" href="/static/stock css/viccistockinvent.css">
+         <title>Inventory</title>
+ </head>
+ <body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-primary  bg-dark " >
+    <ul class="nav nav-tabs">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Communication</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">About Us</a></li>
+          <li><a class="dropdown-item" href="#">Hotline</a></li>
+          <li><a class="dropdown-item" href="">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Social Media Platforms</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link da " aria-current="page" href="./home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="./dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-warning active" aria-current="page" href="./inventory">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./sales">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./stock">Stock</a>
+      </li>
+
+    </ul>
+  </nav>
+
+           <div class="container ">
+            <div class="row">
+              <div class="col-3" style=" transform: translateY(80px);">
+                <div class="col-12">  
+                  <nav style=" border-radius: 10px;margin-right: 5%; background-color: rgb(33, 77, 77);" >
+
+
+                    <button type="button" class="btn mt-2 mb-1 5 btn-outline-warning">Nav Drop Down Menu</button>
+                    <div class="input-group mb-3">
+                      
+                      <button type="button" style="margin-left: 60px;" class="btn btn-outline-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                       </button>
+                      <ul class="dropdown-menu ">
+                        <li class="list-group-item" style="background-color: rgb(0, 0, 0);" >
+
+                        <h3><i class="fa fa-bars" aria-hidden="true"></i> Nav Menu</h3></li>
+                      
+                        <li class="list-group-item"style="background-color: rgb(0, 0, 0);"> 
+                          <a href="./dashboard"> <button class="navbtn">Dashboard</button></a>
+                        </li>
+                       
+                        <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./inventory"><button class="navbtn">Inventory</button></a>
+                        </li>
+                        <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./sales"><button class="navbtn">Sales</button></a></li>
+                        <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./stock"> <button class="navbtn">Stock</button></a></li>
+                        
+                      </ul>
+                    </div>
+                  </a>                    
+                  </nav>
+                </div>
+              </div>
+              
+              
+              
+              <div class="col-9 mt-3">
+                <div class="row " style="display: flex;flex-wrap: wrap;" >
+                    <div class="col-3">
+                      
+                        <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#salesModal"><img src="/static/hoversale.png" alt="Purchase"></a>
+                  
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="salesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                                <div class="modal-header">
+                                <h5 style="font-family: cursive;font-size: medium;color: chartreuse;" class="modal-title" id="exampleModalLabel"><img src="/static/hoversale.png" alt="Make sale"><ins> MAKE <span>PURCHASE</span> </ins> </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>                                 
+                                    <form action="Make_Sale" method="post" class="pop">                                    
+                                        <div class="mb-3">                                         
+                                         <select class="select form"  name="product_id" style="color: rgb(124, 184, 184); background-color: rgb(63, 73, 53); border-radius: 4px;text-align: center;font-size: 130%;font-family: 'Times New Roman', Times, serif;" aria-label="Default select examlpe" name="pid" id="pid">
+                                          {% for i in invtory %}
+                                          
+                                          <option value="{{i[0]}}">{{i[1]}}</option>
+                                          {% endfor %}
+                                        </select>                                            
+                                    
+                                        <div class="mb-2">
+                                          <label for="QUANTITY" class="form-label">Enter QUANTITY</label>
+                                          <input type="number" name="quantity" class="form-control" id="QUANTITY">
+                                        </div>
+                                        </div>                                       
+                                      <button type="submit" class="btn btn-primary" data-bs-target="">Make Sale</button>
+                                  </form> 
+                                <div class="mb-3">                                          
+                                </div>
+                              <div class="modal-footer">
+                              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-danger">Save changes</button>
+                              </div>
+                          </div>
+                        </div>
+                       </div>
+                    </div>
+
+                    <div class="col-3">
+                    </div>
+
+                    <div class="col-3" style="margin-bottom: 30px;">
+                        <!-- <button type="button" class="btn btn-lg btn-dark" disabled>+ Add New Item</button> -->
+                        <!-- Button trigger modal -->
+                            
+                          <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/static/adder2.png" alt="Add Iventory">Inventory</a>
+                            
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><img src="/static/adder.png" alt=""> Item</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>                                 
+                                            <form action="add_item" style="text-align: center;" method="post" class="pop">
+                                              <!-- <div class="mb-3">
+                                                  <label for="name" class="form-label">Enter your Name</label>
+                                                  <input type="text" name="name" class="form-control" id="name">
+                                                  <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                                                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->                                   
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label">Item Name</label>
+                                                  <input type="text" name="name" class="form-control" id="Item">
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label">Buying Price</label>
+                                                  <input type="text" name="bp" class="form-control" id="Item">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label">Selling Price</label>
+                                                  <input type="text" name="sp" class="form-control" id="Item">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label">Enter Serial Number</label>
+                                                  <input type="text" name="serial" class="form-control" id="Item">
+                                                </div>
+                                              <div class="mb-3 form-check">                                             
+                                              </div>
+                                              <button type="submit" style="width: 300px;" class="btn btn-primary" data-bs-target="tbl1">Add Item</button>
+                                          </form> 
+                                        <div class="mb-3">                                          
+                                        </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                            </div>                                                      
+                    
+                    
+                <div class="row">
+                    <table class="table mt-4"id="tbl1" align='center' width="90%" >
+                      
+                      <thead>
+                        
+                          <tr class="tbltr text-warning">
+                            <th scope="col" id="id">ID</th>
+                            <!-- <th scope="col">CONTRACTOR</th> -->
+                            <th scope="col">PRODUCT</th>
+                            <th scope="col">B.P</th>
+                            <th scope="col">S.P</th>
+                            <th scope="col">QUANTITY</th>
+                           <!-- <th scope="col" id="colu">TOTALB.P</th>
+                            <th scope="col"id="colu">TOTALS.P</th>
+                             <th scope="col">CATEGORY</th> -->
+                            <th scope="col">EDIT</th>
+                            <th scope="col">VIEW SALE</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                      {% for i in invtory %}
+                          <tr >
+                            <td style="font-weight: 400; font-size: 130%;">{{i[0]}}</td>
+                            <td style="font-weight: 400; font-size: 130%;">{{i[1]}}</td>
+                            <td style="font-weight: 400; font-size: 130%;">{{i[2]}}</td>
+                            <td style="font-weight: 400; font-size: 130%;">{{i[3]}}</td>
+                            <td style="font-weight: 400; font-size: 130%;">{{i[4]}}</td>
+                            <!--<td style="font-weight: 400; font-size: 130%;">{{i[5]}}</td>
+                             <td style="font-weight: 400; font-size: 130%;">{{i[6]}}</td>
+                            <td style="font-weight: 400; font-size: 130%;">{{i[7]}}</td>
+                            <td style="font-weight: 400; font-size: 130%;">{{i[8]}}</td>                                                         -->
+                            <td>                              
+                              <!-- <img  id="edithover" src="/static/download.png" alt="EDIT" > -->
+                              <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}"><img src="/static/download.png" alt="Add Iventory"></a>                                                        
+                            <!-- Modal -->
+                            <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"> Edit Inventory</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>                                 
+                                            <form action="edit" style="text-align: center" method="post" class="pop">                                                                                 
+                                              <div class="mb-3">
+                                                <label for="Item" class="form-label"></label>
+                                                <input type="hidden" name="id" value="{{i[0]}}" class="form-control" id="Item">
+                                              </div>  
+                                              <div class="mb-3">
+                                                  <label for="Item" class="form-label"><strong><i><ins>NEW</ins></i></strong> Item Name</label>
+                                                  <input type="text" name="name" value="{{i[1]}}" class="form-control" id="Item">
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label"><strong><i><ins>NEW</ins></i></strong> Buying Price</label>
+                                                  <input type="text" name="bp" value="{{i[2]}}" class="form-control" id="Item">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label"><strong><i><ins>NEW</ins></i></strong> Selling Price</label>
+                                                  <input type="text" name="sp" value="{{i[3]}}" class="form-control" id="Item">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                  <label for="Item" class="form-label">Enter <strong><i><ins>NEW</ins></i></strong> Serial Number</label>
+                                                  <input type="text" name="serial" value="{{i[4]}}" class="form-control" id="Item">
+                                                </div>
+                                              <div class="mb-3 form-check">                                             
+                                              </div>
+                                              <button type="submit" style="width: 300px;" class="btn btn-primary" data-bs-target="tbl1">Edit Item</button>
+                                          </form> 
+                                        <div class="mb-3">                                          
+                                        </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                            </div> 
+                              
+                            </td>
+                            <td>  
+                                                                                      
+                              <a href="/sales/{{i[0]}}" style="color: darkcyan;" class="btn btn-dark" ><img id="deletehover" src="/static/sale icon.png" alt="DELETE"></a>
+                            
+                            </td>
+                          </tr>
+                      {% endfor %}                         
+                        </tbody>
+                </div>
+              </div>
+            </div>
+        </div>
+     <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.11.3/af-2.3.7/b-2.2.1/b-colvis-2.2.1/b-html5-2.2.1/b-print-2.2.1/cr-1.5.5/date-1.1.1/fc-4.0.1/fh-3.2.1/kt-2.6.4/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.0/sp-1.4.0/sl-1.3.4/sr-1.1.0/datatables.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#tbl1').DataTable();
+      } );
+    </script>
+    </body>
+ </html>
