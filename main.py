@@ -3,8 +3,8 @@ from flask import Flask, flash, redirect, render_template, request, url_for,sess
 
 
 try:
-    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    # conn = psycopg2.connect("dbname='d4augsl57bdont' user='epbnudknwnktpp' port='5432' host='ec2-34-199-15-136.compute-1.amazonaws.com' password='863b87226bd0eafa17748cc14d4bdcb0af464d40c35796f8bf38cce8dc378153'")
+    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    conn = psycopg2.connect("dbname='d4augsl57bdont' user='epbnudknwnktpp' port='5432' host='ec2-34-199-15-136.compute-1.amazonaws.com' password='863b87226bd0eafa17748cc14d4bdcb0af464d40c35796f8bf38cce8dc378153'")
 except:
     print ("I am unable to connect to the  Vicci database")
 
