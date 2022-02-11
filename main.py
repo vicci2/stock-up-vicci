@@ -4,7 +4,7 @@ from flask import Flask, flash, redirect, render_template, request, url_for,sess
 
 try:
     # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    conn = psycopg2.connect("dbname='d4augsl57bdont' user='epbnudknwnktpp' port='5432' host='ec2-34-199-15-136.compute-1.amazonaws.com' password='863b87226bd0eafa17748cc14d4bdcb0af464d40c35796f8bf38cce8dc378153'")
+    conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
