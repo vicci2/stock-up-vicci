@@ -134,7 +134,7 @@ def sales(id):
     cur.execute("SELECT pr.name,sum((pr.sp-pr.bp)* sl.quantity) as ttlprofit,sum(sl.quantity)as totalprofit FROM public.sales as sl join products as pr on pr.id=sl.product_id where pr.id=%s group by pr.name ",[id])
     sales= cur.fetchall()
     print(sales)
-    return render_template("viccistocksales.html",sale=sales,)
+    return render_template("viccistocksales.html",sale=sales)
     
-app.run(debug=True)
+app.run(debug=False)
 
