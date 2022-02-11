@@ -1,16 +1,15 @@
 import psycopg2
 from flask import Flask, flash, redirect, render_template, request, url_for,session
 
+app =Flask(__name__)
+app.secret_key="123secrete kye"
 
 try:
-    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
+    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    # conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
-
-app =Flask(__name__)
-app.secret_key="123secrete kye"
 
 @app.route('/')
 def ims():
@@ -134,7 +133,7 @@ def sales(id):
     cur.execute("SELECT pr.name,sum((pr.sp-pr.bp)* sl.quantity) as ttlprofit,sum(sl.quantity)as totalprofit FROM public.sales as sl join products as pr on pr.id=sl.product_id where pr.id=%s group by pr.name ",[id])
     sales= cur.fetchall()
     print(sales)
-    return render_template("viccistocksales.html",sale=sales,)
+    return render_template("viccistocksales.html",sale=sales)
     
 app.run(debug=True)
 
