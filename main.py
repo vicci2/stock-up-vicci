@@ -1,5 +1,5 @@
 import psycopg2
-from flask import Flask, flash, redirect, render_template, request, url_for,session
+from flask import Flask, flash, redirect, render_template, request, url_for
 
 app =Flask(__name__)
 app.secret_key="123secrete kye"
