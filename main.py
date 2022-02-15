@@ -124,7 +124,7 @@ def sale():
     print(sales)
     return render_template("viccistocksales.html",sale=sales,)
 
-@app.route('/sales/<int:id>')
+@app.route('/sales')
 def sales(id):
     cur=conn.cursor()
 
@@ -134,5 +134,5 @@ def sales(id):
     print(sales)
     return render_template("viccistocksales.html",sale=sales)
     
-app.run()
+app.run(debug=True)
 
