@@ -134,5 +134,5 @@ def sales(id):
     print(sales)
     return render_template("viccistocksales.html",sale=sales)
     
-app.run(debug=False)
+app.run(debug=True)
 
