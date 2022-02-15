@@ -133,6 +133,6 @@ def sales(id):
     sales= cur.fetchall()
     print(sales)
     return render_template("viccistocksales.html",sale=sales)
-    
-app.run(debug=True)
+if __name__ == '__main__': 
+    app.run(debug=True)
 
