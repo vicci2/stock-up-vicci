@@ -1,6 +1,5 @@
 *{transition: ease 0.05s;}
-/* nav{position: fixed;} */
-.carder{width: 100vw;margin-left: -4.4vw;}
+.carder{width: 100vw;margin-left: -11.5%;}
 footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: none;border-radius: 5px;background-color:none;}
 #imsbout{color:chocolate;text-align: center; padding: 5px;border-left: 1px solid gold;border-bottom: 1px solid gold;}
 #portfolio{color: chocolate;text-align: center; padding: 5px;border-right: 1px solid gold;border-top: 1px solid gold;}
