@@ -1,12 +1,11 @@
+from flask import Flask, flash, redirect, render_template, request, url_for
 import psycopg2
-from flask import Flask, flash, redirect, render_template, request, url_for,session
-
 app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
     conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    #  conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
+    # conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
@@ -125,7 +124,7 @@ def sale():
     print(sales)
     return render_template("viccistocksales.html",sale=sales,)
 
-@app.route('/sales/<int:id>')
+@app.route('/sales')
 def sales(id):
     cur=conn.cursor()
 
@@ -135,5 +134,7 @@ def sales(id):
     print(sales)
     return render_template("viccistocksales.html",sale=sales)
     
-app.run(debug=False)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 

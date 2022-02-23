@@ -1,4 +1,20 @@
-body{background-color: whitesmoke;}
+*{transition: ease 0.05s;}
+/* nav{position: fixed;} */
+.carder{width: 100vw;margin-left: -4.4vw;}
+footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: none;border-radius: 5px;background-color:none;}
+#imsbout{color:chocolate;text-align: center; padding: 5px;border-left: 1px solid gold;border-bottom: 1px solid gold;}
+#portfolio{color: chocolate;text-align: center; padding: 5px;border-right: 1px solid gold;border-top: 1px solid gold;}
+#imsbout:hover{color:indigo;text-align: center; padding: 5px; background-color: grey;border-left:none;border-bottom: none;border-right: 1px solid gold;border-top: 1px solid gold;}
+#portfolio:hover{color: indigo; text-align: center; padding: 5px;background-color: grey;border-right:none;border-top: none;border-left: 1px solid gold;border-bottom: 1px solid gold;}
+/* 
+.cont{width: 100%;}
+.progressbar{}
+.progressbar li{list-style-type: none;text-align: center; float: left;width: 30%;position: relative;}
+.progressbar li ::before{content: "1";width: 50px;height: 50px;border: orange 1.5px solid;
+display: block;text-align: center;
+} */
+
+/* body{background-color: whitesmoke;}
 .container{transform: translateY(50%);width: 20%;justify-content: space-around;}
 .container .card{position: relative;width: 250px;
     display: flex;justify-content: center;align-items: center;
@@ -9,16 +25,8 @@ svg{position: relative;width: 150px;height: 150px;z-index: 1000;}
 svg circle{width: 100%;height: 100%;fill: white;
 stroke: black;stroke-width: 10;stroke-linecap: round;transform: translateY(5px);}
 .pgbarcont{color: grey;}
-.pgbar{height: 24px;width: 50%;}
-/* 
-.cont{width: 100%;}
-.progressbar{}
-.progressbar li{list-style-type: none;text-align: center; float: left;width: 30%;position: relative;}
-.progressbar li ::before{content: "1";width: 50px;height: 50px;border: orange 1.5px solid;
-display: block;text-align: center;
-} */
-
-svg circle:nth-child(2){
+.pgbar{height: 24px;width: 50%;} */
+/* svg circle:nth-child(2){
     stroke-dasharray: 220;
     stroke-dashoffset: 220;
 }
@@ -33,4 +41,4 @@ svg circle:nth-child(2){
 .card:nth-child(3) svg circle :nth-child(2)
 {
     stroke: rgb(0, 4, 255);
-}
+} */
