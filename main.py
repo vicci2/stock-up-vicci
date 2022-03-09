@@ -1,6 +1,4 @@
-from unicodedata import numeric
 from flask import Flask, flash, redirect, render_template, request, url_for
-from numpy import integer
 import psycopg2
 app =Flask(__name__)
 app.secret_key="123secrete kye"
