@@ -1,4 +1,5 @@
 from flask import Flask, flash, redirect, render_template, request, url_for
+
 import psycopg2
 app =Flask(__name__)
 app.secret_key="123secrete kye"
@@ -9,8 +10,7 @@ try:
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
-cur=conn   
-cur.cursor()
+cur=conn.cursor()
 cur.execute('CREATE TABLE products (id INT NOT NULL PRIMARY KEY,name VARCAHR(55) NOT NULL,bp INT(20),sp INT(20),serial_no VARCHAR)')
 cur.execute('CREATE TABLE sales (id INT NOT NULL PRIMARY KEY,product_id FOREIGN KEY(id) REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT(10),created_at DATE NOT NULL DEFAULT NOW())')
 cur.execute('CREATE TABLE stock (id INT NOT NULL PRIMARY KEY,product_name VARCHAR(50) NOT NULL,quantity INT(20) NOT NULL,bp FOREIGN KEY(bp) REFERENCES products(bp) ON UPDATE CASCADE NOT NULL,date DATE NOT NULL DEFAULT NOW())')
