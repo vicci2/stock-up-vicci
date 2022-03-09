@@ -1,14 +1,22 @@
+from unicodedata import numeric
 from flask import Flask, flash, redirect, render_template, request, url_for
+from numpy import integer
 import psycopg2
 app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
-    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    # conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
+    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
+cur=conn   
+cur.cursor()
+cur.execute('CREATE TABLE products (id INT NOT NULL PRIMARY KEY,name VARCAHR(55) NOT NULL,bp INT(20),sp INT(20),serial_no VARCHAR)')
+cur.execute('CREATE TABLE sales (id INT NOT NULL PRIMARY KEY,product_id FOREIGN KEY(id) REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT(10),created_at DATE NOT NULL DEFAULT NOW())')
+cur.execute('CREATE TABLE stock (id INT NOT NULL PRIMARY KEY,product_name VARCHAR(50) NOT NULL,quantity INT(20) NOT NULL,bp FOREIGN KEY(bp) REFERENCES products(bp) ON UPDATE CASCADE NOT NULL,date DATE NOT NULL DEFAULT NOW())')
+cur.execute('CREATE TABLE suppliers (id INT NOT NULL PRIMARY KEY,name VARCHAR(50) NOT NULL,location VARCHAR NOT NULL,email_address VARCHAR NOT NULL,address VARCHAR NOT NULL)')
 
 @app.route('/')
 def ims():
