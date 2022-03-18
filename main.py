@@ -122,7 +122,7 @@ def stockup():
         return redirect(url_for('stock')) 
 
 @app.route('/sales')
-def sale():
+def sales():
     cur=conn.cursor()
 
     cur.execute("SELECT pr.name,sum((pr.sp-pr.bp)* sl.quantity) as ttlprofit,sum(sl.quantity)as totalprofit FROM public.sales as sl join products as pr on pr.id=sl.product_id group by pr.name  ;")  
@@ -130,8 +130,8 @@ def sale():
     print(sales)
     return render_template("viccistocksales.html",sale=sales,)
 
-@app.route('/sales')
-def sales(id):
+@app.route('/sale/<string:id>')
+def sale(id):
     cur=conn.cursor()
 
     # cur.execute("SELECT pr.name,sum((pr.sp-pr.bp)* sl.quantity) as ttlprofit,sum(sl.quantity)as totalprofit FROM public.sales as sl join products as pr on pr.id=sl.product_id where id=%d group by pr.name ;",[id])
