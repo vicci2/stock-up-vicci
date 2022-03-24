@@ -121,6 +121,18 @@ def stockup():
         flash('Product Successfully Added') 
         return redirect(url_for('stock')) 
 
+# @app.route('/avail', methods=["POST"])
+# def avail():
+#     cur=conn.cursor()
+#     if request.method=="POST":
+#         query=""
+#         query1=""
+#         cur.execute(query,query1)
+#         conn.commit()
+#         return redirect(url_for('stock'))
+#     else:
+#         return "Hello"
+
 @app.route('/sales')
 def sales():
     cur=conn.cursor()

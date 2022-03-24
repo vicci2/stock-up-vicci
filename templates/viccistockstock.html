@@ -127,10 +127,7 @@
         <div class="col-3">  </div>
 
         <div class="col-3">
-          
-          
-          
-        </div>
+                   
       </div>       
       <table class="table  " id="tbl1" align='center' width="90%">
         <thead >
@@ -140,17 +137,57 @@
             <th scope="col">TOTAL QUANTITY</th>
             <th scope="col">TOTAL COST</th>
             <th scope="col">DATE</th>
+            <th scope="col">AVAIL ITEM</th>
           </tr>
         </thead>
         <tbody>
           {% for i in stock %}
           <tr>  
             <!-- {{i}} -->
-            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[0]}}</td>
-            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[1]}}</td>
-            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[2]}}</td>
-            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[3]}}</td>
-            <td style="font-weight: 400;transform: translateY(10px); font-size: 130%;">{{i[4]}}</td>
+            <td style="font-weight: 400;font-size: 130%;">{{i[0]}}</td>
+            <td style="font-weight: 400;font-size: 130%;">{{i[1]}}</td>
+            <td style="font-weight: 400;font-size: 130%;">{{i[2]}}</td>
+            <td style="font-weight: 400;font-size: 130%;">{{i[3]}}</td>
+            <td style="font-weight: 400;font-size: 130%;">{{i[4]}}</td>
+            <!-- <td >
+              <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}">Avail Item</a>                                                        
+                             Modal 
+                            <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Avail Item</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>                                 
+                                            <form action="avail" style="text-align: center" method="post" class="pop">                                                                                 
+                                              <div>
+                                                <label for="Item" class="form-label"></label>
+                                                <input type="hidden" name="id" value="{{i[0]}}" class="form-control" id="Item">
+                                              </div>
+                                              <div>
+                                                <label for="Item" class="form-label"></label>
+                                                <input type="hidden" name="name" value="{{i[1]}}" class="form-control" id="Item">
+                                              </div>                                              
+                                              <div>
+                                                <label for="Item" class="form-label">Enter Quantity</label>
+                                                <input type="text" name="quantity" class="form-control" id="Item">
+                                              </div>
+                                              <div>
+                                                <label for="Item" class="form-label">Total Cost</label>
+                                                <input type="number" name="cost" value="" class="form-control" id="Item">
+                                              </div>
+                                          </form> 
+                                        <div class="mb-3">                                          
+                                        </div>
+                                    <div class="modal-footer" style="display: flex; justify-content: space-between;">
+                                    <button type="button"  class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger"> Avail Content</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                            </div> 
+            </td> -->
           </tr> 
             {% endfor %}       
         </tbody>
