@@ -12,7 +12,7 @@ except:
     print ("I am unable to connect to the  Vicci database")
 cur=conn.cursor()
 cur.execute("CREATE TABLE products (id INT NOT NULL PRIMARY KEY,name varchar(50) NOT NULL,bp INT,sp INT,serial_no VARCHAR(20))")
-cur.execute("CREATE TABLE sales (id INT NOT NULL PRIMARY KEY,product_id foreign key(id) REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT,created_at DATE NOT NULL DEFAULT NOW())")
+cur.execute("CREATE TABLE sales (id INT NOT NULL PRIMARY KEY,product_id FOREIGN KEY(id) REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT,created_at DATE NOT NULL DEFAULT NOW())")
 cur.execute("CREATE TABLE stock (id INT NOT NULL PRIMARY KEY,product_name VARCHAR(50) NOT NULL,quantity INT NOT NULL,bp FOREIGN KEY(bp) REFERENCES products(bp) ON UPDATE CASCADE NOT NULL,date DATE NOT NULL DEFAULT NOW())")
 cur.execute("CREATE TABLE suppliers (id INT NOT NULL PRIMARY KEY,name VARCHAR(50) NOT NULL,location VARCHAR(30) NOT NULL,email_address VARCHAR(40) NOT NULL,address VARCHAR(15) NOT NULL)")
 
