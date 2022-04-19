@@ -11,10 +11,10 @@ try:
 except:
     print ("I am unable to connect to the  Vicci database")
 cur=conn.cursor()
-cur.execute("CREATE TABLE products (id INT NOT NULL PRIMARY KEY,name varchar(50) NOT NULL,bp INT,sp INT,serial_no VARCHAR(20))")
-cur.execute("CREATE TABLE sales (id INT NOT NULL PRIMARY KEY,product_id foreign key(id) REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT,created_at DATE NOT NULL DEFAULT NOW())")
-cur.execute("CREATE TABLE stock (id INT NOT NULL PRIMARY KEY,product_name VARCHAR(50) NOT NULL,quantity INT NOT NULL,bp FOREIGN KEY(bp) REFERENCES products(bp) ON UPDATE CASCADE NOT NULL,date DATE NOT NULL DEFAULT NOW())")
-cur.execute("CREATE TABLE suppliers (id INT NOT NULL PRIMARY KEY,name VARCHAR(50) NOT NULL,location VARCHAR(30) NOT NULL,email_address VARCHAR(40) NOT NULL,address VARCHAR(15) NOT NULL)")
+cur.execute("CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY,name varchar(50) NOT NULL,bp INT,sp INT,serial_no VARCHAR(20))")
+cur.execute("CREATE TABLE IF NOT EXISTS sales (id serial PRIMARY KEY,product_id FOREIGN KEY REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT,created_at DATE NOT NULL DEFAULT NOW())")
+cur.execute("CREATE TABLE IF NOT EXISTS stock (id serial PRIMARY KEY,product_name VARCHAR(50) NOT NULL,quantity INT NOT NULL,bp FOREIGN KEY(bp) REFERENCES products(bp) ON UPDATE CASCADE NOT NULL,date DATE NOT NULL DEFAULT NOW())")
+cur.execute("CREATE TABLE IF NOT EXISTS suppliers (id serial PRIMARY KEY,name VARCHAR(50) NOT NULL,location VARCHAR(30) NOT NULL,email_address VARCHAR(40) NOT NULL,address VARCHAR(15) NOT NULL)")
 
 @app.route('/')
 def ims():
@@ -65,7 +65,7 @@ def adder():
         row=(name,bp,sp,serial_no)
         cur.execute(query,row)
         conn.commit()
-        flash('Product Successfully Added') 
+        flash('Product Successfully Added','info') 
         return redirect(url_for('invent')) 
 
 @app.route('/Make_Sale',methods=["POST"])
@@ -78,7 +78,7 @@ def saler():
     row=(id,quantity,created_at)
     cur.execute(query,row)
     conn.commit()
-    flash('Purchace Successful') 
+    flash('Purchace Successful','info') 
     return redirect(url_for('invent')) 
 
 @app.route('/edit',methods=["POST"])
@@ -95,7 +95,7 @@ def editor():
         row=(name,bp,sp,serial_no,id)
         cur.execute(query,row)
         conn.commit()
-        flash('Product Successfully Edited') 
+        flash('Product Successfully Edited', 'info') 
         return redirect(url_for('invent'))
 
 @app.route('/stock')
@@ -118,8 +118,10 @@ def stockup():
         row=(name,quantity,bp,created_at)
         cur.execute(query,row)
         conn.commit()
-        flash('Product Successfully Added') 
-        return redirect(url_for('stock')) 
+        flash('Product Successfully Added','info') 
+        return redirect(url_for('stock'))
+    else:
+        flash('Required conditions not met!', 'danger') 
 
 # @app.route('/avail', methods=["POST"])
 # def avail():
