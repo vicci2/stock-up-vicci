@@ -5,16 +5,16 @@ app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
-    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    conn = psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
-    print ("Successfullly connected to the  Vicci database")
+    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    # conn = psycopg2.connect("dbname='d3a96tnlon0e19' user='zeuqvesoredycm' port='5432' host='ec2-52-48-159-67.eu-west-1.compute.amazonaws.com' password='f22ebebb9e3f5c8cb096b0fd0ed191458d3bd2703190f91c32c71d723dd7d586'")
+    # print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
-cur=conn.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY,name varchar(50) NOT NULL,bp INT,sp INT,serial_no VARCHAR(20))")
-cur.execute("CREATE TABLE IF NOT EXISTS sales (id serial PRIMARY KEY,product_id FOREIGN KEY REFERENCES products(id) ON UPDATE CASCADE NOT NULL,quantity INT,created_at DATE NOT NULL DEFAULT NOW())")
-cur.execute("CREATE TABLE IF NOT EXISTS stock (id serial PRIMARY KEY,product_name VARCHAR(50) NOT NULL,quantity INT NOT NULL,bp FOREIGN KEY(bp) REFERENCES products(bp) ON UPDATE CASCADE NOT NULL,date DATE NOT NULL DEFAULT NOW())")
-cur.execute("CREATE TABLE IF NOT EXISTS suppliers (id serial PRIMARY KEY,name VARCHAR(50) NOT NULL,location VARCHAR(30) NOT NULL,email_address VARCHAR(40) NOT NULL,address VARCHAR(15) NOT NULL)")
+# cur=conn.cursor()
+# cur.execute("CREATE TABLE IF NOT EXISTS products (id serial NOT NULL PRIMARY KEY,name varchar(55) NOT NULL,bp INT(15),sp INT(15),serial_no VARCHAR")
+# cur.execute("CREATE TABLE IF NOT EXISTS sales (id serial NOT NULL PRIMARY KEY,product_id INT NOT NULL,quantity INT (10),created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW())")
+# cur.execute("CREATE TABLE IF NOT EXISTS stock (id serial NOT NULL PRIMARY KEY,product_name VARCHAR,quantity INT(20),bp (20) NOT NULL,date WITH TIME ZONE NOT NULL DEFAULT NOW())")
+# cur.execute("CREATE TABLE IF NOT EXISTS suppliers (id serial NOT NULL PRIMARY KEY,name VARCHAR NOT NULL,location VARCHAR NOT NULL,email_address VARCHAR NOT NULL,address VARCHAR NOT NULL)")
 
 @app.route('/')
 def ims():
