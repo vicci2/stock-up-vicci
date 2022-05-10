@@ -11,10 +11,11 @@ try:
 except:
     print ("I am unable to connect to the  Vicci database")
 cur=conn.cursor()
-cur.execute('CREATE TABLE IF NOT EXISTS products (id serial ,name varchar(55) NOT NULL,bp INT(15),sp INT(15),serial_no VARCHAR)')
-cur.execute('CREATE TABLE IF NOT EXISTS sales (id serial ,product_id INT NOT NULL,quantity INT (10),created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW())')
-cur.execute('CREATE TABLE IF NOT EXISTS stock (id serial ,product_name VARCHAR,quantity INT(20),bp (20) NOT NULL,date WITH TIME ZONE NOT NULL DEFAULT NOW())')
+cur.execute('CREATE TABLE IF NOT EXISTS products (id serial ,name varchar(55) NOT NULL,bp int,sp int,serial_no varchar(50))')
+cur.execute('CREATE TABLE IF NOT EXISTS sales (id serial ,product_id int NOT NULL,quantity int,created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW())')
+cur.execute('CREATE TABLE IF NOT EXISTS stock (id serial ,product_name VARCHAR,quantity int,bp int NOT NULL,date time without time zone NOT NULL DEFAULT NOW())')
 cur.execute('CREATE TABLE IF NOT EXISTS suppliers (id serial ,name VARCHAR NOT NULL,location VARCHAR NOT NULL,email_address VARCHAR NOT NULL,address VARCHAR NOT NULL)')
+conn.commit()
 
 @app.route('/')
 def ims():
