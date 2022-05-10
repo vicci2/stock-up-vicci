@@ -5,8 +5,8 @@ app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
-    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    conn = psycopg2.connect("dbname='d13aomlgi8qq6i' user='ewniyjtgheelry' port='5432' host='3b57e1fb10f3a1b2a37a8609cb1b0f661ce1023b3ab2af3c88d8788c56a3dee8' password='f22ebebb9e3f5c8cb096b0fd0ed191458d3bd2703190f91c32c71d723dd7d586'")
+    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    # conn = psycopg2.connect("dbname='d13aomlgi8qq6i' user='ewniyjtgheelry' port='5432' host='3b57e1fb10f3a1b2a37a8609cb1b0f661ce1023b3ab2af3c88d8788c56a3dee8' password='f22ebebb9e3f5c8cb096b0fd0ed191458d3bd2703190f91c32c71d723dd7d586'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
@@ -22,7 +22,12 @@ def ims():
 
 @app.route('/home')
 def home():
-    return render_template("viccistockhome.html")
+    cur=conn.cursor()
+    # cur.execute("SELECT count(name)FROM public.products ;")
+    cur.execute("SELECT count(pr.id),count(sls.id),count(stk.id) FROM public.products as pr inner join sales as sls on sls.product_id=pr.id inner join stock as stk on stk.id=pr.id;")    
+    data=cur.fetchall()
+    print(data)
+    return render_template("viccistockhome.html", data1=data)
 
 @app.route('/dashboard')
 def dash():
@@ -123,17 +128,20 @@ def stockup():
     else:
         flash('Required conditions not met!', 'danger') 
 
-# @app.route('/avail', methods=["POST"])
-# def avail():
-#     cur=conn.cursor()
-#     if request.method=="POST":
-#         query=""
-#         query1=""
-#         cur.execute(query,query1)
-#         conn.commit()
-#         return redirect(url_for('stock'))
-#     else:
-#         return "Hello"
+@app.route('/avail', methods=["POST"])
+def avail():
+    cur=conn.cursor()
+    if request.method=="POST":
+        quantity=request.form[""]
+        request.form[""]
+        query=""
+        query1=""
+        cur.execute(query,query1)
+        conn.commit()
+        flash('Product Successfully Availed','info')
+        return redirect(url_for('stock'))
+    else:
+        return "Hello" 
 
 @app.route('/sales')
 def sales():

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/static/stock css/viccistockhome.css">
+ 
          <!-- Required meta tags -->
          <meta charset="utf-8">
          <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
          <!-- Bootstrap CSS -->
          <link rel="icon" type="image/x-icon" href="./images/robert-katzki-jbtfM0XBeRc-unsplash.jpg">
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <title>Home</title>
+     <title>Home</title><link rel="stylesheet" href="/static/stock css/viccistockhome.css">
  </head>
  <body>
   <nav class="navbar navbar-expand-lg navbar-primary  bg-dark " >
@@ -43,78 +43,44 @@
 
     </ul>
   </nav>
- <div class="container mt-5">
-    <div class="row">
-      <div class="col-3">
-        <!-- Sidebar -->
-       
-        
-
-
-<!-- Sidebar -->
-<ul class="list-group" >
-  <li class="list-group-item" style="background-color: rgb(0, 0, 0);" >
-    <!-- avatar -->
-  <!-- <img src="/static/images/stock.jpg" class="rounded float-left mr-3" alt="Dashboard Avatar" width="50px" height="30px"> -->
-  <!-- heading -->
-  <h3><i class="fa fa-bars" aria-hidden="true"></i> Nav Menu</h3></li>
-
-  <li class="list-group-item"style="background-color: rgb(0, 0, 0);"> 
-    <a href="./dashboard"> <button class="navbtn">Dashboard</button></a>
-  </li>
- 
-  <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./inventory"><button class="navbtn">Inventory</button></a>
-  </li>
-  <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./sales"><button class="navbtn">Sales</button></a></li>
-  <li class="list-group-item" style="background-color: rgb(0, 0, 0);"><a href="./stock"> <button class="navbtn">Stock</button></a></li>
-  
-</ul>
-</div>
-
-      <div class="col-md-9 col-sm-6 p-4 mt-5"> 
-        <!-- Analytics -->
-        <!-- Cards -->
-        <div class="row">
+  <div class="row mt-5" style="padding: 20px;">
+        Analytics Cards
+        <div class="row">          
           <!-- use text-light and bg-success classes on the cards -->
           <div class="col col-lg-4 col-md-4 col-sm-12">
-            <div class="card bg-success text-light" style="width: 16rem;">
+            <div class="card  text-dark">
             <div class="card-body">
-              <h5 class="card-title">Current Inventory</h5>
-              <p class="card-text"> 11 </p>
+              <h5 class="card-title"  align="center">Current Inventory</h5>
+              {% for result in data1 %} 
+                  <p  align="center">{{result[0]}} </p>              
+              {% endfor %}
             </div>
           </div>
         </div>
 
           <div class="col col-lg-4 col-md-4 col-sm-12">
-            <div class="card bg-success text-light" style="width: 16rem;">               
+            <div class="card  text-dark" >               
               <div class="card-body">
-                <h5 class="card-title">Today's Sales</h5>
-                <p class="card-text"> 128 </p>                 
+                <h5 class="card-title" align="center">Total Sales</h5>
+                {% for result in data1 %} 
+                  <p align="center">{{result[1]}} </p>              
+                {% endfor %}                
               </div>
             </div>
-          </div>
-          <div class="col col-lg-4 col-md-4 col-sm-12">
-            <div class="card bg-success text-light" style="width: 16rem;">               
-              <div class="card-body">
-                <h5 class="card-title">Total Stock</h5>
-                <p class="card-text"> 28 </p>                 
-              </div>
-            </div>
-          </div>
+          </div>        
 
-        </div>
-        <div class="row">
-          
-          <div class="col mt-4">
-            <canvas id="myChart" width="879" height="878" style="display: block; box-sizing: border-box; height: 439px; width: 439.5px;"></canvas>
-          </div>
-          <div class="col mt-4">
-            <canvas id="pie-chart" width="879" height="878" style="display: block; box-sizing: border-box; height: 439px; width: 439.5px;"></canvas>
+          <div class="col col-lg-4 col-md-4 col-sm-12">
+            <div class="card  text-dark">               
+              <div class="card-body">
+                <h5 class="card-title"  align="center">Total Stock</h5>
+                {% for result in data1 %} 
+                  <p  align="center">{{result[2]}} </p>              
+                {% endfor %}                
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
