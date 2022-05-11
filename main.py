@@ -5,17 +5,17 @@ app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
-    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    # conn = psycopg2.connect("dbname='db3es5gpr6ngft' user='mrerxiwtdinwip' port='5432' host='ec2-63-35-156-160.eu-west-1.compute.amazonaws.com' password='6639d45c8e3a6b4866c2f29cad5077d35d4b70f7091ada07ee34e593f93aeec8'")
+    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    conn = psycopg2.connect("dbname='db3es5gpr6ngft' user='mrerxiwtdinwip' port='5432' host='ec2-63-35-156-160.eu-west-1.compute.amazonaws.com' password='6639d45c8e3a6b4866c2f29cad5077d35d4b70f7091ada07ee34e593f93aeec8'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
-# cur=conn.cursor()
-# cur.execute('CREATE TABLE IF NOT EXISTS products (id serial ,name varchar(55) NOT NULL,bp int,sp int,serial_no varchar(50))')
-# cur.execute('CREATE TABLE IF NOT EXISTS sales (id serial ,product_id int NOT NULL,quantity int,created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW())')
-# cur.execute('CREATE TABLE IF NOT EXISTS stock (id serial ,product_name VARCHAR,quantity int,bp int NOT NULL,date time without time zone NOT NULL DEFAULT NOW())')
-# cur.execute('CREATE TABLE IF NOT EXISTS suppliers (id serial ,name VARCHAR NOT NULL,location VARCHAR NOT NULL,email_address VARCHAR NOT NULL,address VARCHAR NOT NULL)')
-# conn.commit()
+cur=conn.cursor()
+cur.execute('CREATE TABLE IF NOT EXISTS products (id serial ,name varchar(55) NOT NULL,bp int,sp int,serial_no varchar(50))')
+cur.execute('CREATE TABLE IF NOT EXISTS sales (id serial ,product_id int NOT NULL,quantity int,created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW())')
+cur.execute('CREATE TABLE IF NOT EXISTS stock (id serial ,product_name VARCHAR,quantity int,bp int NOT NULL,date time without time zone NOT NULL DEFAULT NOW())')
+cur.execute('CREATE TABLE IF NOT EXISTS suppliers (id serial ,name VARCHAR NOT NULL,location VARCHAR NOT NULL,email_address VARCHAR NOT NULL,address VARCHAR NOT NULL)')
+conn.commit()
 
 @app.route('/')
 def ims():
