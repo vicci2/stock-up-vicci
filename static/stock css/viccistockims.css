@@ -1,10 +1,44 @@
-*{transition: ease 0.05s;}
-.carder{width: 100vw;margin-left: -11.5%;}
+*{transition: ease 1.5s;}
+.carder{width: 100vw;margin-left: -11.5%;display: flex;justify-content: space-between;padding: 20px;}
+.card1{border-radius: 4px; background-color: rgb(7, 86, 204);}
 footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: none;border-radius: 5px;background-color:none;}
 #imsbout{color:chocolate;text-align: center; padding: 5px;border-left: 1px solid gold;border-bottom: 1px solid gold;}
 #portfolio{color: chocolate;text-align: center; padding: 5px;border-right: 1px solid gold;border-top: 1px solid gold;}
 #imsbout:hover{color:indigo;text-align: center; padding: 5px; background-color: grey;border-left:none;border-bottom: none;border-right: 1px solid gold;border-top: 1px solid gold;}
 #portfolio:hover{color: indigo; text-align: center; padding: 5px;background-color: grey;border-right:none;border-top: none;border-left: 1px solid gold;border-bottom: 1px solid gold;}
+
+@media only screen and (max-width: 768px) {
+    .carder{width: 100; margin-left: -16%;}
+       
+}
+@media only screen and (max-width: 661px) {
+    .carder{width: 100; margin: -14%;}
+       
+}
+@media only screen and (max-width: 645px) {
+    .carder{width: 100; margin-left: -13%;}
+    
+}
+  
+@media only screen and (max-width: 638px) {
+    .carder{width: 110%; margin-left: -5%;}
+       
+}
+
+@media only screen and (max-width: 575px) {
+    #content{display: block; justify-content: space-evenly;}
+    .card1{background: transparent;} 
+    .nicer{color: rgb(160, 136, 76); padding: 8px; border-radius: 5px; border-left: 1px solid goldenrod;
+        border-right: 1px solid goldenrod;
+    }   
+       
+}
+
+/* @media only screen and (max-width: 402px) {
+    #about{display: block;}
+   
+} */
+
 /* 
 .cont{width: 100%;}
 .progressbar{}

@@ -1,0 +1,32 @@
+*{transition: ease 1s;margin:0;}
+.row h2{font-family: 'Lucida Sans Unicode' ; text-align: center;
+    color: rgb(38, 13, 61);
+}
+body{background: linear-gradient(rgb(212, 2, 2),rgba(5, 5, 5, 0.867)); overflow: hidden;}
+.navbar{width:101%;}
+
+.card{background: transparent;color: rgb(106, 108, 129);}
+
+@media only screen and (max-width: 768px) {
+  .card{margin:5px;}      
+  .navbar{width:101%;}
+       
+}
+ @media only screen and (max-width: 668px) {
+    .navbar{width:102%;overflow: hidden;}     
+       
+}
+ @media only screen and (max-width: 525px) {
+    .navbar{width:103%;overflow: hidden;}
+    
+}
+
+@media only screen and (max-width: 350px) {
+    .navbar{width:105%;overflow: hidden;}
+    
+}
+ 
+@media only screen and (max-width: 210px) {
+      .navbar{width:107%;overflow: hidden;}
+        
+}

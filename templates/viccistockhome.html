@@ -44,11 +44,11 @@
     </ul>
   </nav>
   <div class="row mt-5" style="padding: 20px;">
-        Analytics Cards
-        <div class="row">          
+        <h2>Analytics Cards</h2>
+        <div class="row" id="card">          
           <!-- use text-light and bg-success classes on the cards -->
           <div class="col col-lg-4 col-md-4 col-sm-12">
-            <div class="card  text-dark">
+            <div class="card  ">
             <div class="card-body">
               <h5 class="card-title"  align="center">Current Inventory</h5>
               {% for result in data1 %} 
@@ -59,7 +59,7 @@
         </div>
 
           <div class="col col-lg-4 col-md-4 col-sm-12">
-            <div class="card  text-dark" >               
+            <div class="card  " >               
               <div class="card-body">
                 <h5 class="card-title" align="center">Total Sales</h5>
                 {% for result in data1 %} 
@@ -70,7 +70,7 @@
           </div>        
 
           <div class="col col-lg-4 col-md-4 col-sm-12">
-            <div class="card  text-dark">               
+            <div class="card  ">               
               <div class="card-body">
                 <h5 class="card-title"  align="center">Total Stock</h5>
                 {% for result in data1 %} 
