@@ -1,0 +1,77 @@
+*{transition: ease 1.5s; }
+.carder{width: 100vw;margin-left: -11.5%;display: flex;justify-content: space-between;padding: 20px;}
+.card1{border-radius: 4px; background-color: rgb(7, 86, 204);}
+footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: none;border-radius: 5px;background-color:none;}
+#imsbout{color:chocolate;text-align: center; padding: 5px;border-left: 1px solid gold;border-bottom: 1px solid gold;}
+#portfolio{color: chocolate;text-align: center; padding: 5px;border-right: 1px solid gold;border-top: 1px solid gold;}
+#imsbout:hover{color:indigo;text-align: center; padding: 5px; background-color: grey;border-left:none;border-bottom: none;border-right: 1px solid gold;border-top: 1px solid gold;}
+#portfolio:hover{color: indigo; text-align: center; padding: 5px;background-color: grey;border-right:none;border-top: none;border-left: 1px solid gold;border-bottom: 1px solid gold;}
+
+@media only screen and (max-width: 768px) {
+    .carder{width: 100; margin-left: -16%;}
+       
+}
+@media only screen and (max-width: 661px) {
+    .carder{width: 100; margin: -14%;}
+       
+}
+@media only screen and (max-width: 645px) {
+    .carder{width: 100; margin-left: -13%;}
+    
+}
+  
+@media only screen and (max-width: 638px) {
+    .carder{width: 110%; margin-left: -5%;}
+       
+}
+
+@media only screen and (max-width: 575px) {
+    #content{display: block; justify-content: space-evenly;}
+    .card1{background: transparent;} 
+    .nicer{color: rgb(160, 136, 76); padding: 8px; border-radius: 5px; border-left: 1px solid goldenrod;
+        border-right: 1px solid goldenrod;
+    }   
+       
+}
+
+/* @media only screen and (max-width: 402px) {
+    #about{display: block;}
+   
+} */
+
+/* 
+.cont{width: 100%;}
+.progressbar{}
+.progressbar li{list-style-type: none;text-align: center; float: left;width: 30%;position: relative;}
+.progressbar li ::before{content: "1";width: 50px;height: 50px;border: orange 1.5px solid;
+display: block;text-align: center;
+} */
+
+/* body{background-color: whitesmoke;}
+.container{transform: translateY(50%);width: 20%;justify-content: space-around;}
+.container .card{position: relative;width: 250px;
+    display: flex;justify-content: center;align-items: center;
+    border-radius: 2%;height: 300px;text-align: center;overflow: hidden;transition: 0.5s; 
+    background: linear-gradient(0deg,#1b1b1b,#222,#1b1b1b);}
+.container .card:hover{transform: translateY(-1opx);}
+svg{position: relative;width: 150px;height: 150px;z-index: 1000;}
+svg circle{width: 100%;height: 100%;fill: white;
+stroke: black;stroke-width: 10;stroke-linecap: round;transform: translateY(5px);}
+.pgbarcont{color: grey;}
+.pgbar{height: 24px;width: 50%;} */
+/* svg circle:nth-child(2){
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+}
+.card:nth-child(1) svg circle :nth-child(2)
+{
+    stroke: springgreen;
+}
+.card:nth-child(2) svg circle :nth-child(2)
+{
+    stroke: rgb(60, 255, 0);
+}
+.card:nth-child(3) svg circle :nth-child(2)
+{
+    stroke: rgb(0, 4, 255);
+} */

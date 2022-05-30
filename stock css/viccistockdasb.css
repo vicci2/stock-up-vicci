@@ -1,0 +1,6 @@
+.navbtn{color: rgb(45, 116, 10); width: 100%;border-radius: 10px;background-color: rgb(56, 54, 54);}
+.navbtn:hover{color: rgb(192, 3, 3); width: 110%;margin: auto; border-radius: 10px;transform: translateX(-9pt);border: darkred 2.7px solid; background-color: rgb(15, 22, 20);}
+.btn{margin-left: 30px;}
+.container{overflow: auto;width: 90%;
+    display: flex;flex-wrap: wrap;justify-content: center;
+}
