@@ -1,8 +1,15 @@
 *{transition: ease 1s;}
-tr,td{border-width: pt; width: 38pt; height: 10pt;}
+tr,td{border-width: 1pt; width: 5%; height: 13%;}
 tr:hover{background-color: lightslategray;color: rgb(226, 230, 10);}
 #tbl1{margin-bottom: 10pt;color: rgb(10, 243, 224);}
 #table1{margin-bottom: 10pt;}
 #id{width: 4px;}
 .select form:hover{color: rgb(0, 139, 81);}
 span{color: chocolate;}
+
+@media only screen and (max-width: 768px) {
+    .container{overflow: auto;width: 90%;
+        display: flex;flex-wrap: wrap;justify-content: center;
+    }
+    #top{margin-left: 15%;}
+}

@@ -4,4 +4,13 @@
 tr,td{border-width: pt; width: 38pt; height: 10pt;}
 tr:hover{background-color: rgb(124, 140, 156);color: rgb(61, 230, 10);}
 #tbl1{margin-bottom: 10pt;color: rgb(10, 243, 224);}
+.flexwrap{
+display: flex;flex-wrap: wrap;
+flex-direction: row;justify-content: space-evenly;
+}
+.flexwrap .col{border: 1px solid;
+    margin: 1rem 1rem;
+    border-radius: 6px;
+}
+
 

@@ -1,4 +1,4 @@
-*{transition: ease 1.5s;}
+*{transition: ease 1.5s; }
 .carder{width: 100vw;margin-left: -11.5%;display: flex;justify-content: space-between;padding: 20px;}
 .card1{border-radius: 4px; background-color: rgb(7, 86, 204);}
 footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: none;border-radius: 5px;background-color:none;}

@@ -87,10 +87,12 @@
 </div>
 <div class="container ">
   <div class="row">
-    <div class="col-9 mt-5">
-      <div class="row">
-        
-        <div class="col-3 "> 
+    <div class=" col col-lg-12 col-md-12 col-sm-12  mt-5">
+      <div class="row">        
+
+        <div class="col col-lg-3 col-md-3 col-sm-3"></div>
+
+        <div class="col col-lg-6 col-md-6 col-sm-6 "> 
         
           <a  style="color: darkcyan; transform: translateY(-25px);position: relative;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/static/adder2.png" alt="Add stock">Stock</a> 
         
@@ -134,11 +136,8 @@
             </div>
         </div>
 
-        <div class="col-3">  </div>
+        <div class="col col-lg-3 col-md-3 col-sm-3"></div> 
 
-        <div class="col-3">
-                   
-        </div>       
       <table class="table  " id="tbl1" align='center' width="90%">
         <thead >
           <tr class="tbltr text-warning" >
@@ -161,49 +160,45 @@
             <td style="font-weight: 400;font-size: 130%;">{{i[4]}}</td>
             <td >
               <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}">Avail Item</a>                                                        
-                            <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
-                                        <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Avail Item</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>                                 
-                                            <form action="avail" style="text-align: center" method="post" class="pop">                                                                                 
-                                              <div>
-                                                <label for="Item" class="form-label"></label>
-                                                <input type="hidden" name="id" value="{{i[0]}}" class="form-control" id="Item">
-                                              </div>
-                                              <div>
-                                                <label for="Item" class="form-label"></label>
-                                                <input type="hidden" name="name" value="{{i[1]}}" class="form-control" id="Item">
-                                              </div>                                              
-                                              <div>
-                                                <label for="Item" class="form-label">Enter Quantity</label>
-                                                <input type="text" name="quantity" class="form-control" id="Item">
-                                              </div>
-                                              <div>
-                                                <label for="Item" class="form-label">Total Cost</label>
-                                                <input type="number" name="cost"  class="form-control" id="Item">
-                                              </div>
-                                          </form> 
-                                        <div class="mb-3">                                          
-                                        </div>
-                                    <div class="modal-footer" style="display: flex; justify-content: space-between;">
-                                    <button type="button"  class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-danger"> Avail Content</button>
-                                    </div>
-                                  </div>
-                                </div>
-                                </div>
-                            </div> 
+                <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Avail Item</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>                                 
+                      <form action="avail" style="text-align: center" method="post" class="pop">                                                                                 
+                        <div>
+                          <label for="Item" class="form-label"></label>
+                          <input type="hidden" name="id" value="{{i[0]}}" class="form-control" id="Item">
+                        </div>
+                        <div>
+                          <label for="Item" class="form-label"></label>
+                          <input type="hidden" name="name" value="{{i[1]}}" class="form-control" id="Item">
+                        </div>                                              
+                        <div>
+                          <label for="Item" class="form-label">Enter Quantity</label>
+                          <input type="text" name="quantity" class="form-control" id="Item">
+                        </div>
+                        <div>
+                          <label for="Item" class="form-label">Total Cost</label>
+                          <input type="number" name="cost"  class="form-control" id="Item">
+                        </div>                      
+                      </form>                       
+                      <div class="mb-3"></div>
+                      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+                        <button type="button"  class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger"> Avail Content</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </td>
           </tr> 
             {% endfor %}       
         </tbody>
       </table>
-    </div> 
-  
-      
+    </div>         
   </div>
 </div>
  <!-- Optional JavaScript; choose one of the two! -->
