@@ -1,0 +1,16 @@
+.navbtn{color: rgb(45, 116, 10); width: 100%;border-radius: 10px;background-color: rgb(56, 54, 54);}
+.navbtn:hover{color: rgb(192, 3, 3); width: 110%;margin: auto; border-radius: 10px;transform: translateX(-9pt);border: darkred 2.7px solid; background-color: rgb(15, 22, 20);}
+.btn{margin-left: 30px;}
+tr,td{border-width: pt; width: 38pt; height: 10pt;}
+tr:hover{background-color: rgb(124, 140, 156);color: rgb(61, 230, 10);}
+#tbl1{margin-bottom: 10pt;color: rgb(10, 243, 224);}
+.flexwrap{
+display: flex;flex-wrap: wrap;
+flex-direction: row;justify-content: space-evenly;
+}
+.flexwrap .col{border: 1px solid;
+    margin: 1rem 1rem;
+    border-radius: 6px;
+}
+
+
