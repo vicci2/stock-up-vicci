@@ -8,7 +8,7 @@ tr:hover{background-color: lightslategray;color: rgb(226, 230, 10);}
 span{color: chocolate;}
 
 @media only screen and (max-width: 768px) {
-    .container{overflow: auto;width: 90%;
+    .container{overflow: auto;
         display: flex;flex-wrap: wrap;justify-content: center;
     }
     #top{margin-left: 15%;}

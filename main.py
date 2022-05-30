@@ -5,8 +5,8 @@ app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
-    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    conn = psycopg2.connect("dbname='db3es5gpr6ngft' user='mrerxiwtdinwip' port='5432' host='ec2-63-35-156-160.eu-west-1.compute.amazonaws.com' password='6639d45c8e3a6b4866c2f29cad5077d35d4b70f7091ada07ee34e593f93aeec8'")
+    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    # conn = psycopg2.connect("dbname='db3es5gpr6ngft' user='mrerxiwtdinwip' port='5432' host='ec2-63-35-156-160.eu-west-1.compute.amazonaws.com' password='6639d45c8e3a6b4866c2f29cad5077d35d4b70f7091ada07ee34e593f93aeec8'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")

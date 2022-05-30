@@ -90,7 +90,7 @@
   </div>
   </div>
 
-           <div class="container ">
+          <div class="container ">
             <div class="row">
                                           
               <div class="col col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -98,15 +98,14 @@
                     <div id="top" class="col col-lg-3 col-md-4 col-sm-4">
                       
                         <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#salesModal"><img src="/static/hoversale.png" alt="Purchase"></a>
-                  
-                    
+                                      
                     <!-- Modal -->
                     <div class="modal fade" id="salesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                          <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
                                 <div class="modal-header">
-                                <h5 style="font-family: cursive;font-size: medium;color: chartreuse;" class="modal-title" id="exampleModalLabel"><img src="/static/hoversale.png" alt="Make sale"><ins> MAKE <span>PURCHASE</span> </ins> </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  <h5 style="font-family: cursive;font-size: medium;color: chartreuse;" class="modal-title" id="exampleModalLabel"><img src="/static/hoversale.png" alt="Make sale"><ins> MAKE <span>PURCHASE</span> </ins> </h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>                                 
                                     <form action="Make_Sale" method="post" class="pop">                                    
                                         <div class="mb-3">                                         
@@ -132,7 +131,7 @@
                               </div>
                           </div>
                         </div>
-                       </div>
+                    </div>
                     </div>
 
                     <!-- <div class="col col-lg-3 col-md-3 col-sm-2">
@@ -142,9 +141,7 @@
                         <!-- <button type="button" class="btn btn-lg btn-dark" disabled>+ Add New Item</button> -->
                         <!-- Button trigger modal -->
                             
-                          <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/static/adder2.png" alt="Add Iventory">Inventory</a>
-                            
-                            
+                          <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/static/adder2.png" alt="Add Iventory">Inventory</a>                                                        
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -180,25 +177,25 @@
                                               <div class="mb-3 form-check">                                             
                                               </div>
                                               <button type="submit" style="width: 300px;" class="btn btn-primary" data-bs-target="tbl1">Add Item</button>
-                                          </form> 
-                                        <div class="mb-3">                                          
-                                        </div>
+                                          </form>
+                                    </div> 
+                                    <div class="mb-3">                                          
+                                    </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-danger">Save changes</button>
                                     </div>
-                                  </div>
                                 </div>
-                                </div>
-                            </div>                                                      
-                    
-                    
+                            </div>
+                    </div>
+                </div>                                                      
+                                        
                 <div class="row">
                     <table class="table mt-4 table-lg-12 table-md-5 table-sm-5" id="tbl1" align='center'>
                       
                       <thead>
                         
-                          <tr class="tbltr text-warning">
+                        <tr class="tbltr text-warning">
                             <th scope="col" id="id">ID</th>
                             <!-- <th scope="col">CONTRACTOR</th> -->
                             <th scope="col">PRODUCT</th>
@@ -211,8 +208,8 @@
                             <th scope="col">EDIT</th>
                             <th scope="col">VIEW SALE</th>
                         </tr>
-                        </thead>
-                        <tbody>
+                      </thead>
+                      <tbody>
                       {% for i in invtory %}
                           <tr >
                             <td style="font-weight: 400; font-size: 130%;">{{i[0]}}</td>
@@ -225,7 +222,7 @@
                             <td style="font-weight: 400; font-size: 130%;">{{i[7]}}</td>
                             <td style="font-weight: 400; font-size: 130%;">{{i[8]}}</td>                                                         -->
                             <td>                              
-                              <!-- <img  id="edithover" src="/static/download.png" alt="EDIT" > -->
+                            <!-- <img  id="edithover" src="/static/download.png" alt="EDIT" > -->
                               <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}"><img src="/static/download.png" alt="Add Iventory"></a>                                                        
                             <!-- Modal -->
                             <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -264,15 +261,13 @@
                                           </form> 
                                         <div class="mb-3">                                          
                                         </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">Save changes</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger">Save changes</button>
+                                        </div>
                                   </div>
                                 </div>
-                                </div>
-                            </div> 
-                              
+                            </div>                                                        
                             </td>
                             <td>  
                                                                                     
@@ -281,11 +276,13 @@
                             </td>
                           </tr>
                       {% endfor %}                         
-                        </tbody>
+                      </tbody>
+                    </table>                        
                 </div>
               </div>
             </div>
-        </div>
+          </div>
+
      <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

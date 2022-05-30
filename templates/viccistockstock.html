@@ -32,7 +32,7 @@
       </li>
     </ul>
   </nav>
-</div>
+
 <div class="row">
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -87,9 +87,8 @@
 </div>
 <div class="container ">
   <div class="row">
-    <div class=" col col-lg-12 col-md-12 col-sm-12  mt-5">
-      <div class="row">        
-
+    <!-- <div class=" col col-lg-12 col-md-12 col-sm-12  mt-5"> -->
+    <div class="row">        
         <div class="col col-lg-3 col-md-3 col-sm-3"></div>
 
         <div class="col col-lg-6 col-md-6 col-sm-6 "> 
@@ -132,13 +131,14 @@
                   <button type="button" class="btn btn-danger">Save changes</button>
                   </div>
                 </div>
-              </div>
             </div>
+          </div>
         </div>
 
         <div class="col col-lg-3 col-md-3 col-sm-3"></div> 
-
-      <table class="table  " id="tbl1" align='center' width="90%">
+    </div>
+    <div class="row">
+      <table class="table table-lg-12 table-md-12  table-sm-12" id="tbl1" >
         <thead >
           <tr class="tbltr text-warning" >
             <th scope="col">ID</th>
@@ -161,9 +161,9 @@
             <td >
               <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}">Avail Item</a>                                                        
                 <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
-                        <div class="modal-header">
+                  <div class="modal-dialog">
+                    <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                      <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Avail Item</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>                                 
