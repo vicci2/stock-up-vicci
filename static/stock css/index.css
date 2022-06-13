@@ -1,0 +1,146 @@
+*{transition: ease 0.8s;}
+body{width: unset;margin: unset;padding: unset;
+    overflow: unset;padding: unset;text-decoration: none
+    ;box-sizing: border-box;background: var(--dope);
+}
+:root{
+    
+    /* ............... Themecolors  ..............*/
+        --background:rgb(37, 37, 37);
+        --background1:rgb(11, 12, 12);
+        --texcolor:rgb(9, 28, 197);
+        --texcolor5:rgb(209, 8, 8);
+        --texcolor1:rgb(170, 0, 0);
+        --texcolor4:rgb(109, 4, 4);
+        --texcolor2:rgb(45, 58, 58);
+        --texcolor3:rgb(207, 204, 11);
+    /* .......x........Gradientcolors   ........x...... */
+        --sky: linear-gradient(120deg,#a1c4fd 0%, #c2e9fb 100%);
+        --dope: linear-gradient(120deg,#c7b0b0 0%, #42bb42 100%);
+    /* .......x........Gradientcolors   ........x...... */
+}
+/* ............... global  ..............*/
+a{text-decoration: none;color: var(--texcolor2);}
+ul li{list-style-type: none;margin:0rem 0.3rem;}
+input{border-radius: 4px;border: solid 1px;padding: 0.4rem;
+    width: 35rem;background: var(--texcolor2);margin: 1rem;
+    cursor: pointer;outline: none;
+}
+.btn{background: var(--texcolor2);color: rgb(13, 128, 228);
+    padding: 0.4rem;border-radius: 4px;border: black solid 1px;
+    cursor: pointer;
+}
+/* .........x...... global  .......x.......*/
+
+/* ............... Navbar  ..............*/
+.nav{padding: 5px;width: 100vw;overflow: auto;
+    height: 9vh;min-height: 4vh; opacity: 90%;
+    background: var(--background1);
+
+}
+.nav .nav-menu{padding: 0.2rem;display: flex;flex-wrap: wrap;
+    margin: 0rem 1rem;flex-direction: row;
+    justify-content: space-between;
+}
+.nav-menu .brand {color: var(--texcolor2);
+    padding:1rem 0.5rem;display: block;
+}
+.logo{
+    font-size: 1.6rem
+}
+.toggle-collapse{top: 0.5rem;width: 90%;
+    position: absolute;display: none;
+}
+.collapse{height: 30rem;}
+.nav .toggle-collapse .toggle-icons{
+    color: white;display: flex;justify-content: flex-end;
+    padding: 1rem 0rem;font-size: 1.4rem;
+}
+.nav .nav-items ul{display: flex;flex-wrap: wrap;
+    margin: 1rem 0rem;
+}
+.nav-items ul a{cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 4px;        
+}
+.nav-items ul a:hover{
+    border-bottom: 1px solid var(--background);
+    color: var(--texcolor3);
+}
+.nav-items .nav-link a{position: relative;
+    color:var(--texcolor2);padding:1rem;font-size: 1rem;
+}
+
+.nav .socials{margin:0rem 1rem;
+    padding: 0.3rem;
+}
+.socials a{margin:0rem 0.3rem;
+    color: var(--texcolor4);font-size: 1.5rem;
+}
+.socials a:hover{color: var(--background);}
+/* .........x...... Navbar  .......x.......*/
+
+/* ............... Main  ..............*/
+main .container{width: 100vw;display: flex;
+    flex-direction: row;margin: 1rem 0rem;
+}
+.input{display: flex;
+ flex-direction: row;justify-content: space-evenly;
+}
+form{
+    height: 55vh;
+}
+    /* ............... Card  ..............*/
+.option{width: 10%;}
+.results{color: rgb(86, 88, 88);
+display: flex;justify-content: space-between;
+}
+.card1 h2,.card2 h2{
+    margin: 0.1rem 0rem;
+}
+.card1,.card2{padding: 1rem;margin: 0rem 2rem;width: 50%;
+    border: 1px solid rgb(56, 59, 58);border-radius: 5px;
+}
+    /* .........x...... Card  .......x.......*/
+/* .........x...... Main  .......x.......*/
+
+/* ...............respovsive..............*/
+
+@media only screen and (max-width:750px){
+    .nav .nav-menu,.nav .nav-items ul{
+        flex-direction: column;
+        }
+    .nav-link {
+        margin: 1.5rem;
+    }
+    .option{width: 14%;}
+    .card1,.card2{
+        width: 50%;
+    }
+    .nav-items .nav-link a:hover{margin: 0rem 2rem;
+        border-radius: 5px;
+    }
+    .toggle-collapse{display: none;}
+    input{width: 38rem;}
+    .input{display: block;
+        flex-direction: row;justify-content: space-evenly;
+       }
+}
+@media only screen and (max-width:680px){
+    input{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:580px){
+    input{
+        width: 75%;
+    }
+    .results{
+        display: block;
+    }
+    .card1,.card2,.card3,.card4{
+        width: 100%;margin: 0.5rem;
+    }
+}
+
+/* .........x......respovsive.......x.......*/

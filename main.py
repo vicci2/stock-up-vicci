@@ -5,8 +5,8 @@ app =Flask(__name__)
 app.secret_key="123secrete kye"
 
 try:
-    # conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
-    conn = psycopg2.connect("dbname='db3es5gpr6ngft' user='mrerxiwtdinwip' port='5432' host='ec2-63-35-156-160.eu-west-1.compute.amazonaws.com' password='6639d45c8e3a6b4866c2f29cad5077d35d4b70f7091ada07ee34e593f93aeec8'")
+    conn = psycopg2.connect("dbname='duka' user='postgres' host='localhost' password='vicciSQL'")
+    # conn = psycopg2.connect("dbname='db3es5gpr6ngft' user='mrerxiwtdinwip' port='5432' host='ec2-63-35-156-160.eu-west-1.compute.amazonaws.com' password='6639d45c8e3a6b4866c2f29cad5077d35d4b70f7091ada07ee34e593f93aeec8'")
     print ("Successfullly connected to the  Vicci database")
 except:
     print ("I am unable to connect to the  Vicci database")
@@ -163,6 +163,117 @@ def sale(id):
     print(sales)
     return render_template("viccistocksales.html",sale=sales)
     
+@app.route('/payroll', methods=["GET","POST"] )
+def payroll():
+    if request.method=="POST":
+        sallary=request.form["sallary"]
+        bnft1=request.form["bnft1"]
+        bnft2=request.form["bnft2"]        
+        if sallary !="":
+            if bnft1 !="":
+                if bnft2 !="":
+                    gross_sallary=int(int(sallary)+(int(bnft1)+int(bnft2))) 
+                    #Calculating the NHIF    
+                    if gross_sallary>300:
+                        nhf=150 
+                        ans=request.form["ans"]
+                        #Calculating the NSSF
+                        if ans!="Permanent" or ans!="permanent":
+                            nsf=(gross_sallary-nhf)*0 
+                            ti=gross_sallary-nhf 
+
+                            if ti<24000:
+                                tax=ti*0
+                                net=ti
+                                print(tax,nhf,nsf,net)
+                                return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,txblI=tax,nhif=nhf,nssf=nsf,n_sal=net,gs=gross_sallary)
+
+                            elif ti>24000 and ti<32333:
+                                tax=ti*0.25
+                                net=ti*0.75
+                                print(tax,nhf,nsf,net)
+                                return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,txblI=tax,nhif=nhf,nssf=nsf,n_sal=net,gs=gross_sallary)
+                            
+                            else:
+                                ti>32333
+                                tax=ti*0.3
+                                net=ti*0.7  
+                                print(tax,nhf,nsf,net)                       
+                                return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,txblI=tax,nhif=nhf,nssf=nsf,n_sal=net,gs=gross_sallary)
+                        else:
+                            #Calculating the NSSF
+                            if gross_sallary<18000 :
+                               nsff=(gross_sallary-nhf)*0.06
+                               txi=gross_sallary-(nsf+nhf)
+                               # Calculating The payee
+                               if txi<24000:
+                                    tax=txi*0
+                                    net=txi
+                                    return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,n_sal=net,txblI=tax,nhif=nhf,nssf=nsff,gs=gross_sallary)
+                               elif txi>24000 and ti<32333:
+                                    tax=txi*0.25
+                                    net=txi*0.75
+                                    return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,n_sal=net,txblI=tax,nhif=nhf,nssf=nsff,gs=gross_sallary)
+                               else:
+                                    txi>32333
+                                    tax=txi*3
+                                    net=txi*0.7
+                                    return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,n_sal=net,txblI=tax,nhif=nhf,nssf=nsff,gs=gross_sallary)  
+                            else:
+                                nsff=(gross_sallary-nhf)*0.1
+                                txi=gross_sallary-(nsf+nhf)
+                                # Calculating The payee
+                                if txi<24000:
+                                    tax=txi*0
+                                    net=txi
+                                    return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,n_sal=net,txblI=tax,nhif=nhf,nssf=nsff,gs=gross_sallary)
+                                elif txi>24000  and ti<32333:
+                                    tax=txi*0.25
+                                    net=txi*0.75
+                                    return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,n_sal=net,txblI=tax,nhif=nhf,nssf=nsff,gs=gross_sallary)
+                                else:
+                                    txi>32333
+                                    tax=txi*0.3
+                                    net=ti*0.7
+                                    return render_template("index.html",callow=bnft2,hallo=bnft1,bsc=sallary,n_sal=net,txblI=tax,nhif=nhf,nssf=nsff,gs=gross_sallary)  
+                else:
+                    flash("Enter commuter benefits:")
+            else:
+                flash("Enter house benefits:")    
+        else:
+            flash("Enter The Basic Sallary:")
+    return render_template("payroll.html")   
+
+@app.route("/manager",methods=["GET","POST"])   
+def manager():
+
+    return render_template("manager.html")
+
+@app.route("/admin",methods=["GET","POST"])   
+def admin():
+
+    return render_template("admin.html")
+
+@app.route("/user",methods=["GET","POST"])   
+def user():
+
+    return render_template("user.html")
+
+@app.route("/users",methods=["GET","POST"])   
+def users():
+
+    return render_template("users.html")
+
+@app.route("/purchase",methods=["GET","POST"])   
+def purchase():
+    cur=conn.cursor()
+  
+    cur.execute("SELECT * from products")
+    
+    mbp= cur.fetchall()
+    print(mbp)
+    # invent=[(1,"Vicci","Omo",500,900,20,"Product"),(2,"Mani","Sunlight",342,723,12,"Product"),(3,"Shameful","Aerial",928,7093,2,"service")]
+    return render_template("purchase.html",invtory=mbp)
 
 if __name__ == '__main__':
     app.run(debug=True)

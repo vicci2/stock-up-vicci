@@ -1,0 +1,66 @@
+{% extends "manager.html" %}
+{% block navtitle %}
+<style>
+  input{border: none;
+    text-align: center;
+    font-size: larger;
+    color: aqua;
+    background: rgb(54, 54, 53);
+    outline: none;font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+  a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+  form{
+    display: flex;flex-wrap: wrap;flex-direction: column;
+    justify-content: center;
+  }
+  form .modal-footer{
+    justify-content: space-between;
+  }  
+</style>
+<h2>
+    USER
+    <!-- <i class="fas fa-bars"></i> -->
+    <box-icon name="user" color="red" border="circle" size="md"></box-icon>
+    <!-- <a href="#" ><i class="fa-brands fa-whatsapp"></i></a> -->
+</h2>        
+<div class="top">
+  <!-- <a href="sales">Sales</a> --> 
+  <a href="#">Log-Out</a>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+  <a class="navbar " id="lin1" href="dashboard">Dashboard</a>
+  <a class="navbar " id="lin4" href="inventory">Inventory</a>
+  <a class="navbar " id="lin1" href="sales">Sales</a>
+{% endblock %}
+
+{% block content %}
+<style>
+  input{border: none;
+    text-align: center;
+    font-size: larger;
+    color: aqua;
+    background: rgb(54, 54, 53);
+    outline: none;font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+  a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+  form{
+    display: flex;flex-wrap: wrap;flex-direction: column;
+    justify-content: center;
+  }
+  form .modal-footer{
+    justify-content: space-between;
+  }  
+</style>
+<div class="col col-lg-11 col-md-12 col-sm12" style="margin-top: 14%;">        
+  <div class="row text-warning">
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}          

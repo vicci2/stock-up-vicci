@@ -1,0 +1,96 @@
+{% extends "viccistockinvetry.html" %}
+
+{% block title %}Stock Up Vicci{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+    <a class="nav-link da " aria-current="page" href="./">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link nav-warning active" aria-current="page" href="./inventory">Products</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="#">Something</a>
+  </li>
+{% endblock %}
+
+{% block sale %}
+<div class="col col-lg-3 col-md-4 col-sm-4" style="margin-bottom: 80px;"></div>
+{% endblock %}
+
+{% block content %} 
+<table class="table mt-5 table-lg-12 table-md-5 table-sm-5" id="tbl1" align='center'>                     
+    <thead>
+      
+      <tr class="tbltr text-warning">
+          <th scope="col" style="visibility: hidden;">ID</th>
+          <th scope="col">PRODUCT</th>
+          <th scope="col">Price</th>
+          <th scope="col">QUANTITY</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in invtory %}
+        <tr>
+          <td style="font-weight: 400; font-size: 130%;visibility: hidden;" >{{i[0]}}</td>
+          <td style="font-weight: 400; font-size: 130%;">{{i[1]}}</td>
+          <td style="font-weight: 400; font-size: 130%;">{{i[3]}}</td>
+          <td style="font-weight: 400; font-size: 130%;">{{i[4]}}</td>                                                        -->
+          <td>                              
+          <!-- <img  id="edithover" src="/static/download.png" alt="EDIT" > -->
+            <!-- <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}"><img src="/static/download.png" alt="Add Iventory"></a>                                                         -->
+          <!-- Modal -->
+          <!-- <div class="modal fade" id="editModal{{i[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content" style=" padding:5px; background-color: rgb(125, 129, 120);">
+                      <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"> Edit Inventory</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>                                 
+                          <form action="edit" style="text-align: center" method="post" class="pop">                                                                                 
+                            <div class="mb-3">
+                              <label for="Item" class="form-label"></label>
+                              <input type="hidden" name="id" value="{{i[0]}}" class="form-control" id="Item">
+                            </div>  
+                            <div class="mb-3">
+                                <label for="Item" class="form-label"><strong><i><ins>NEW</ins></i></strong> Item Name</label>
+                                <input type="text" name="name" value="{{i[1]}}" class="form-control" id="Item">
+                              </div>
+                              <div class="mb-3">
+                                <label for="Item" class="form-label"><strong><i><ins>NEW</ins></i></strong> Buying Price</label>
+                                <input type="text" name="bp" value="{{i[2]}}" class="form-control" id="Item">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Item" class="form-label"><strong><i><ins>NEW</ins></i></strong> Selling Price</label>
+                                <input type="text" name="sp" value="{{i[3]}}" class="form-control" id="Item">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Item" class="form-label">Enter <strong><i><ins>NEW</ins></i></strong> Serial Number</label>
+                                <input type="text" name="serial" value="{{i[4]}}" class="form-control" id="Item">
+                              </div>
+                            <div class="mb-3 form-check">                                             
+                            </div>
+                            <button type="submit" style="width: 300px;" class="btn btn-primary" data-bs-target="tbl1">Edit Item</button>
+                        </form> 
+                      <div class="mb-3">                                          
+                      </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-danger">Save changes</button>
+                      </div>
+                </div>
+              </div>
+          </div>                                                         -->
+          </td>
+          <!-- <td>  
+                                                                  
+            <a href="/sale/{{i[0]}}" style="color: darkcyan;" class="btn btn-dark" ><img id="deletehover" src="/static/sale icon.png" alt="View Sale"></a>
+          
+          </td> -->
+        </tr>
+    {% endfor %}                         
+    </tbody>
+</table>
+{% endblock %}

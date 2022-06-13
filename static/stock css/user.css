@@ -1,0 +1,28 @@
+nav{background-color: rgb(19, 17, 14);position: fixed;z-index: 1; width: 98.5%; margin:10px; border-radius: 4px; padding: 20px;display: flex;justify-content: space-between;}
+.top {display: flex;justify-content: space-between;flex-wrap: wrap;flex-direction: row;}
+a{text-decoration: none;
+    font-size: 105%;font-family: Arial; padding: 5px;margin: 2px;
+}
+a:hover{background-color:rgb(80, 79, 75); border-radius: 5px;color: goldenrod;}
+.nice{font-family: 'Arial Narrow'; color: rgb(172, 8, 8); background:rgb(4, 95, 102);;border-radius: 5px;}
+.nice:hover{background: none;}
+#left{margin-top: 9%;margin-left: -12%; display: flex; flex-wrap: wrap;flex-direction: column; justify-content: space-between;}
+#left a{line-height: 220%;margin-top: 20px; text-decoration: none;color: crimson; padding: 25px;font-size: 150%;font-weight: bolder;font-family:  serif; text-align: center;}
+#left a:hover{background-color: rgb(49, 56, 56);border-radius: 4px;}
+tr:hover{background-color: lightslategray;color: rgb(226, 230, 10);}
+tr{text-align: center;color: aqua;border-bottom:1px solid rgb(211, 207, 207);}
+th{color: brown;border-bottom: 1px solid rgb(206, 203, 203);}
+input{
+    outline: none;
+}
+@media only screen and (max-width: 880px) {
+    #left{
+        margin-left: 0;margin-top: 15%;margin-bottom: -4rem;
+        flex-direction: row;align-content: center;
+    }
+}
+@media only screen and (max-width: 7500px) {
+    #left{        
+        flex-wrap: wrap; flex-direction: row;justify-content: center;
+    }
+}

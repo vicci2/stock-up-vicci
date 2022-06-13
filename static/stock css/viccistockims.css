@@ -1,5 +1,5 @@
 *{transition: ease 1.5s; }
-.carder{width: 100vw;margin-left: -11.5%;display: flex;justify-content: space-between;padding: 20px;}
+.carder{width: 132%;margin:.2;margin-left: -15.9%; display: flex;justify-content: space-between;padding: 20px;}
 .card1{border-radius: 4px; background-color: rgb(7, 86, 204);}
 footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: none;border-radius: 5px;background-color:none;}
 #imsbout{color:chocolate;text-align: center; padding: 5px;border-left: 1px solid gold;border-bottom: 1px solid gold;}
@@ -7,8 +7,12 @@ footer a{ color: rgb(16, 76, 129);margin: 7px;padding: 10px; text-decoration: no
 #imsbout:hover{color:indigo;text-align: center; padding: 5px; background-color: grey;border-left:none;border-bottom: none;border-right: 1px solid gold;border-top: 1px solid gold;}
 #portfolio:hover{color: indigo; text-align: center; padding: 5px;background-color: grey;border-right:none;border-top: none;border-left: 1px solid gold;border-bottom: 1px solid gold;}
 
-@media only screen and (max-width: 768px) {
-    .carder{width: 100; margin-left: -16%;}
+@media only screen and (max-width: 991px) {
+    .carder{width: 100; margin-left: -17%;}
+       
+}
+@media only screen and (max-width: 939px) {
+    .carder{width: 100; margin-left: -18%;justify-content: space-evenly;}
        
 }
 @media only screen and (max-width: 661px) {

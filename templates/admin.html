@@ -1,0 +1,124 @@
+{% extends "manager.html" %}
+{% block title %}Stock Up Vicci{% endblock %}
+
+{% block navtitle %}
+<style>
+  input{border: none;
+    text-align: center;
+    font-size: larger;
+    color: aqua;
+    background: rgb(54, 54, 53);
+    outline: none;font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+  a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+  form{
+    display: flex;flex-wrap: wrap;flex-direction: column;
+    justify-content: center;
+  }
+  form .modal-footer{
+    justify-content: space-between;
+  }  
+</style>
+<h2>ADMIN</h2>        
+<div class="top">
+  <!-- <a href="sales">Sales</a> --> 
+  <a href="users">Users</a>
+  <a href="#">Log-Out</a>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+  <a class="navbar " id="lin1" href="dashboard">Dashboard</a>
+  <a class="navbar " id="lin4" href="inventory">Inventory</a>
+  <a class="navbar " id="lin1" href="sales">Sales</a>
+  <a class="navbar " id="lin5" href="stock">Stock</a>
+{% endblock %}
+
+{% block content %}
+<style>
+  input{border: none;
+    text-align: center;
+    font-size: larger;
+    color: aqua;
+    background: rgb(54, 54, 53);
+    outline: none;font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+  a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+  form{
+    display: flex;flex-wrap: wrap;flex-direction: column;
+    justify-content: center;
+  }
+  form .modal-footer{
+    justify-content: space-between;
+  }  
+</style>
+<div class="col col-lg-11 col-md-12 col-sm12" style="margin-top: 14%;">        
+  <div class="row text-warning">
+    <!-- <p>These are records of the recentley booked hostels:</p> -->
+    <!-- <table> -->
+      <!-- <thead>
+        <tr>
+          <th>Tenant</th>
+          <th>ID Number</th>
+          <th>Email Address</th>
+          <th>Phone Number</th>
+          <th>Gender</th>
+          <th>Parent/Guardian</th>
+          <th>Phone Number</th>
+          <th>Email Address</th>
+          <th>Hostel</th>
+          <th>Add-Tenant</th>
+        </tr>
+      </thead> -->
+      <!-- <tbody> -->
+        <!-- {% for i in infom  %} -->
+         <!-- <tr> -->
+          <!-- <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[3]}}</td>
+          <td>{{i[4]}}</td>
+          <td>{{i[5]}}</td>
+          <td>{{i[6]}}</td>
+          <td>{{i[7]}}</td>
+          <td>{{i[8]}}</td>
+          <td>{{i[9]}}</td> -->
+        <!-- <td> -->
+          <!-- <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookModal">ADD</a> -->
+          <!-- Button trigger modal -->
+
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background: rgb(54, 54, 53);">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Tenant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <form action="booktnt" method="POST">
+                    <label for="room_no">Assign Room Number</label>
+                    <input type="text" id="room_no" name="room_no" placeholder="Room 1">
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-dark">Book Tenant</button>
+                  </div>
+                  </form>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+        <!-- </td> -->
+        <!-- </tr> -->
+        <!-- {% endfor %} -->
+      <!-- </tbody> -->
+    <!-- </table> -->
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

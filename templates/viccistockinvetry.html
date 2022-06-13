@@ -11,15 +11,16 @@
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
          <link rel="stylesheet" href="/static/stock css/viccistockinvent.css">
-         <title>Inventory</title>
+         <title>{% block title %}Inventory{% endblock %}</title>
  </head>
  <body>
 
   
   <nav class="navbar navbar-expand-lg navbar-primary  bg-dark " >
     <ul class="nav nav-tabs">
+      {% block nav %}
       <li class="nav-item">
-        <a class="nav-link da " aria-current="page" href="./home">Home</a>
+        <a class="nav-link  " aria-current="page" href="./home">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " aria-current="page" href="./dashboard">Dashboard</a>
@@ -33,7 +34,7 @@
       <li class="nav-item">
         <a class="nav-link" aria-current="page" href="./stock">Stock</a>
       </li>
-
+      {% endblock %}
     </ul>
   </nav>
 
@@ -95,6 +96,7 @@
                                           
               <div class="col col-lg-12 col-md-12 col-sm-12 mt-3">
                 <div class="row " style="display: flex;flex-wrap: wrap;" >
+                  
                     <div id="top" class="col col-lg-3 col-md-4 col-sm-4">
                       
                         <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#salesModal"><img src="/static/hoversale.png" alt="Purchase"></a>
@@ -121,22 +123,20 @@
                                           <input type="number" name="quantity" class="form-control" id="QUANTITY">
                                         </div>
                                         </div>                                       
-                                      <button type="submit" class="btn btn-primary" data-bs-target="">Make Sale</button>
+                                      <button type="submit" class="btn btn-dark" data-bs-target="">Make Purchace</button>
                                   </form> 
                                 <div class="mb-3">                                          
                                 </div>
                               <div class="modal-footer">
                               <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-danger">Save changes</button>
+                              <button type="button" class="btn btn-danger">Purchase</button>
                               </div>
                           </div>
                         </div>
                     </div>
                     </div>
-
-                    <!-- <div class="col col-lg-3 col-md-3 col-sm-2">
-                    </div> -->
-
+                  
+                  {% block sale %}
                     <div class="col col-lg-3 col-md-4 col-sm-4" style="margin-bottom: 30px;">
                         <!-- <button type="button" class="btn btn-lg btn-dark" disabled>+ Add New Item</button> -->
                         <!-- Button trigger modal -->
@@ -188,23 +188,21 @@
                                 </div>
                             </div>
                     </div>
+                  {% endblock %}
                 </div>                                                      
                                         
                 <div class="row">
+                  {% block content %}
                     <table class="table mt-4 table-lg-12 table-md-5 table-sm-5" id="tbl1" align='center'>
                       
                       <thead>
                         
                         <tr class="tbltr text-warning">
                             <th scope="col" id="id">ID</th>
-                            <!-- <th scope="col">CONTRACTOR</th> -->
                             <th scope="col">PRODUCT</th>
                             <th scope="col">B.P</th>
                             <th scope="col">S.P</th>
                             <th scope="col">QUANTITY</th>
-                           <!-- <th scope="col" id="colu">TOTALB.P</th>
-                            <th scope="col"id="colu">TOTALS.P</th>
-                             <th scope="col">CATEGORY</th> -->
                             <th scope="col">EDIT</th>
                             <th scope="col">VIEW SALE</th>
                         </tr>
@@ -216,11 +214,7 @@
                             <td style="font-weight: 400; font-size: 130%;">{{i[1]}}</td>
                             <td style="font-weight: 400; font-size: 130%;">{{i[2]}}</td>
                             <td style="font-weight: 400; font-size: 130%;">{{i[3]}}</td>
-                            <td style="font-weight: 400; font-size: 130%;">{{i[4]}}</td>
-                            <!--<td style="font-weight: 400; font-size: 130%;">{{i[5]}}</td>
-                             <td style="font-weight: 400; font-size: 130%;">{{i[6]}}</td>
-                            <td style="font-weight: 400; font-size: 130%;">{{i[7]}}</td>
-                            <td style="font-weight: 400; font-size: 130%;">{{i[8]}}</td>                                                         -->
+                            <td style="font-weight: 400; font-size: 130%;">{{i[4]}}</td>                                                        -->
                             <td>                              
                             <!-- <img  id="edithover" src="/static/download.png" alt="EDIT" > -->
                               <a  style="color: darkcyan;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal{{i[0]}}"><img src="/static/download.png" alt="Add Iventory"></a>                                                        
@@ -277,7 +271,8 @@
                           </tr>
                       {% endfor %}                         
                       </tbody>
-                    </table>                        
+                    </table>
+                    {% endblock%}                        
                 </div>
               </div>
             </div>

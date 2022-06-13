@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/static/stock css/index.css">
+    <link rel="stylesheet" href="/static/all.css">
+    <link rel="shortcut icon" href="/static/images/vicci 2.jpg" type="image/x-icon">
+    <title>Payroll</title>
+</head>
+<body>
+<!-- /.............../navbar/.............../ -->
+<nav class="nav">
+    <div class="nav-menu flex-row">
+        <div class="brand">
+            <a href="#" class="logo">Payroll</a>
+            
+        </div>
+        <div class="toggle-collapse">
+            <div class="toggle-icons">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li class="nav-link" id="one">
+                    <a href="#" >About</a>
+                </li>
+                <li class="nav-link">
+                    <a href="manager" >Manager</a>
+                </li>             
+                <li class="nav-link">
+                    <a href="#" >Something</a>
+                </li>             
+                <li class="nav-link">
+                    <a href="#" >Something</a>
+                </li>             
+            </ul>
+        </div>
+        <div class="socials">
+            <a href="#" ><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" ><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" ><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" ><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+</nav>
+<!-- /........x......./navbar/........x......./ -->
+
+<!-- /.............../main/.............../ -->
+<main>
+    <!-- /.............../card/.............../ -->
+    <div class="container">
+        <div class="card">
+            <div class="card-title">
+                {%with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {%for message in messages %}
+                        <div class="alert" role="alert">
+                            <p>{{message}}</p>
+                            <button type="button" class="btn" data-bs-dismiss="alert">Close</button>
+                        </div>
+                        {% endfor%}
+                    {% endif %}
+                {% endwith %}
+
+               <h3>Payroll</h3> 
+            </div>
+            <div class="card-content">
+                <form action="payroll" method="POST">
+                    <div class="input">
+                        <div class="left">
+                            <input type="text" placeholder="Enter Basic sallary:" name="sallary">
+                            <input type="text" placeholder="Enter house benefits:" name="bnft1">
+                            <input type="text" placeholder="Enter commuter benefits:" name="bnft2">
+                            
+                        </div>
+                        <!-- <div class="right">
+                            <input type="text" placeholder="Enter Basic sallary:" name="sallary">
+                            <input type="text" placeholder="Enter house benefits:" name="bnft1">
+                            <input type="text" placeholder="Enter commuter benefits:" name="bnft2">                            
+                        </div>                                         -->
+                </div>
+                <input  type="text" name="ans" class="option" placeholder="Status">
+                    <button class="btn">
+                        Submit
+                    </button>
+                </form>
+                <div class="results">
+                    <div class="card1">
+                        <h2>Deductions</h2>
+                        The NHIF deducted is (Auto) : {{nhif}}<br>
+                        The NSSF deducted is (Auto) : {{nssf}}<br>
+                        The Amount Taxed is: {{txblI}}<br>
+                        
+                    </div>
+                    <div class="card2">
+                        <h2>Calculated Results</h2>
+                        The Basic Sallary is: {{bsc}}<br>
+                        House Allowance given is: {{hallo}}<br>
+                        Commuter Allowance given is: {{callow}}<br>
+                        The Gross Sallary is: {{gs}}<br>
+                        The PAYEE is: {{txblI}}<br>                                                                                                
+                        The NET SALLARY is: {{n_sal}}<br>                                                                                                
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- /........x......./card/........x......./ -->
+</main>
+<!-- /........x......./main/........x......./ -->
+
+<!-- /.............../Footer/.............../ -->
+
+<!-- /........x......./Footer/........x......./ -->
+
+<!--/...............customJS............../ -->
+<script src="/static/js/jQuery v3.6.0.js"></script>
+<!--/...............EndcustomJS............../ -->    
+<!--/...............customJS............../ -->
+<script src="/static/js/main.js"></script>
+<!--/...............EndcustomJS............../ -->    
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>     -->
+</body>
+</html>

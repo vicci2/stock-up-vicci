@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/static/images/vicci 2.jpg" type="image/x-icon">  
+   <!--Box icons   -->
+   <link href='https://unpkg.com/boxicons@2.1.2/dist/boxicons.js' rel='stylesheet'>
+  <!-- local  CSS -->
+   <link rel="stylesheet" href="/static/stock css/user.css">
+   <!-- Bootstrap  CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  <link rel="stylesheet" href="/static/static/tenats.css">
+  <title>{% block title %}Stock Up Vicci{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    {%  block navtitle %}
+    <h2>MANAGER</h2><!-- <box-icon name="user" color="red" border="circle" size="md"></box-icon>        -->
+    <div class="top">
+      <a href="admin">Log-Out</a>
+    </div>
+    {% endblock %}
+  </nav>
+
+  <div class="container">
+    <div class="row" >
+      <div class="col col-lg-2 col-md-12 col-sm-12" id="left">
+        {% block sidebar %}          
+          <a class="navbar " id="lin3" href="dashboard">Dshboard</a>
+          <a class="navbar " id="lin4" href="inventory">Inventory</a>
+          <a class="navbar " id="lin1" href="sales">Sales</a>
+          <a class="navbar " id="lin5" href="stock">Stock</a>
+        {% endblock %}      
+      </div>
+        {% block content %}
+        <style>
+          
+          input{border: none;
+            text-align: center;
+            font-size: larger;
+            color: aqua;
+            background: rgb(54, 54, 53);
+            outline: none;font-family: sans-serif;
+            border-bottom: 1px solid rgb(255, 255, 255);
+          }
+          a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+          a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+          form{
+            display: flex;flex-wrap: wrap;flex-direction: column;
+            justify-content: center;
+          }
+          form .modal-footer{
+            justify-content: space-between;
+          }  
+          #card{
+            display: flex;flex-wrap: wrap;flex-direction: row; 
+          }
+          .card{width:48% ;justify-content: center;
+            margin: 10px 2px;padding: 1rem;border: none; 
+          }
+          .cardttl{
+            text-align: center;
+            color: crimson;
+          }
+          .cardbody{
+            padding: 0.2rem .5rem;border-radius: 5px;
+            border-top: 1px solid gray;
+            display:flex;flex-wrap: wrap; justify-content: center;
+          }
+          .cardbody img{
+            width: 100%; border-radius: 20px;
+          }
+          .cardbody .btn{
+            width: 80%;margin-top: 1rem;
+          }
+          #card1{
+            border-top-left-radius: 6px;
+            border-top-right-radius: 0px;
+            border-left: 1px solid gray;
+          }
+          #card2{
+            border-right: 1px solid gray;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 0px;
+          }
+        </style>
+        <div class="col col-lg-11 col-md-12 col-sm12" style="margin-top: 14%;">        
+          <div class="row text-warning" id="card">
+            <div class="card">
+              <div class="cardttl"><h4>PAYROLL</h4></div>
+              <div class="cardbody" id="card1">
+                <img src="/static/images/payroll.PNG" alt="Screenshot">
+                <a href="payroll" class="btn ">
+                  Payroll Management
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="cardttl"><h4>VICCI HUDDLE</h4></div>
+              <div class="cardbody" id="card2">
+                <img src="/static/images/Amoled Series 7.jpg" alt="Screenshot">
+                <a href="#"  class="btn">
+                  Vicci Huddle
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    </div> 
+    </div>
+ 
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->  
+</body>
+</html>

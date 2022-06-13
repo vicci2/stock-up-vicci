@@ -1,8 +1,8 @@
-tr,td{border-width: pt; width: 38pt; height: 10pt;}
+tr,td{ width: 38pt; height: 10pt;}
 tr:hover{background-color: lightslategray;color: rgb(226, 230, 10);}
 #tbl1{margin-bottom: 10pt;color: rgb(10, 243, 224);}
 #table1{margin-bottom: 10pt;}
 #id{width: 4px;}
-.container{overflow: auto;width: 90%;
+.container{overflow: auto;
     display: flex;flex-wrap: wrap;justify-content: center;
 }

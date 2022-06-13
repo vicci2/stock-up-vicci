@@ -1,0 +1,105 @@
+{% extends "manager.html" %}
+{% block navtitle %}
+<style>
+  input{border: none;
+    text-align: center;
+    font-size: larger;
+    color: aqua;
+    background: rgb(54, 54, 53);
+    outline: none;font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+  a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+  form{
+    display: flex;flex-wrap: wrap;flex-direction: column;
+    justify-content: center;
+  }
+  form .modal-footer{
+    justify-content: space-between;
+  }  
+</style>
+<h2>
+    USERS
+    <!-- <i class="fas fa-bars"></i> -->
+    <box-icon name="user" color="red" border="circle" size="md"></box-icon>
+    <!-- <a href="#" ><i class="fa-brands fa-whatsapp"></i></a> -->
+</h2>        
+<div class="top">
+  <a class="navbar " id="lin1" href="admin">Home</a>
+  <a href="#">Log-Out</a>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<style>
+  input{border: none;
+    text-align: center;
+    font-size: larger;
+    color: aqua;
+    background: rgb(54, 54, 53);
+    outline: none;font-family: sans-serif;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  a{text-decoration: none; font-family:  sans-serif;font-weight: bolder; color: rgb(172, 8, 8);}
+  a:hover{background-color:rgb(80, 79, 75); border-radius: 5px; color: rgb(172, 8, 8);}
+  form{
+    display: flex;flex-wrap: wrap;flex-direction: column;
+    justify-content: center;
+  }
+  form .modal-footer{
+    justify-content: space-between;
+  } 
+  .card{
+      width: 48%;display: flex;flex-wrap: wrap;flex-direction: row;
+    margin: 0rem 0px;
+}
+  .card-body{
+    display: flex;flex-direction: column; justify-content: center;text-align: center;
+  }
+  #card1{
+    border: none;border-left: 1px solid rgb(46, 43, 43);border-top: 1px solid rgb(46, 43, 43);
+    border-radius: 0px; border-top-left-radius: 4px;  
+  }
+  #card2{
+    border: none;border-right: 1px solid rgb(46, 43, 43);border-top: 1px solid rgb(46, 43, 43);
+    border-radius: 0px; border-top-right-radius: 4px;  
+  }
+  #card3{
+    border: none;border-radius: 5px; border-bottom: 1px solid rgb(46, 43, 43);
+  }
+</style>
+<div class="col col-lg-12 col-md-12 col-sm12" style="margin-top: 2%;">        
+  <div class="row text-dark" style="display: flex;justify-content: center;">
+      <div class="card" id="card1">
+          <div class="card-body">
+              <div class="card-ttl">
+                Manager logo
+              </div>
+              <a href="manager" class="btn bg-dark text-danger">Manager</a>
+          </div>
+      </div>
+      <div class="card" id="card2">
+          <div class="card-body">
+              <div class="card-ttl">
+                Users logo
+              </div>
+              <a href="user" class="btn bg-dark text-danger">Users</a>
+          </div>
+      </div>
+      <div class="card" id="card3">
+          <div class="card-body">
+              <div class="card-ttl">
+                Secretary logo
+              </div>
+              <a href="#" class="btn bg-dark text-danger">Secretary</a>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %} 
