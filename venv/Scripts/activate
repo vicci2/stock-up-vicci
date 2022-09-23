@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\USER\Desktop\My projects S.Dev\Vicci.Stock\venv"
+VIRTUAL_ENV="C:\Users\Vicci\Desktop\My S Dev Projects\stock-up-vicci\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
